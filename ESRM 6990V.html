@@ -8,7 +8,7 @@
 
 <meta name="author" content="Henrietta Kadi Tettey-Tawiah">
 
-<title>ESRM 6990V Class Project</title>
+<title>Understanding 4th Grade Math Percent Correct through Student and Teacher Characteristics: A Regression Study using TIMSS 2023</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,7 +101,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">ESRM 6990V Class Project</h1>
+<h1 class="title">Understanding 4th Grade Math Percent Correct through Student and Teacher Characteristics: A Regression Study using TIMSS 2023</h1>
 </div>
 
 
@@ -128,12 +128,36 @@ window.Quarto = {
 <h1>TIMSS DATA</h1>
 <section id="introduction-research-scenario-and-research-questions" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-research-scenario-and-research-questions">Introduction: Research Scenario and Research Questions</h2>
-<p>The researcher would want to investigate the performance of students in the United States of America (USA) and Canada based on the 2023 <a href="https://timss2023.org/data">TIMSS</a> (Trends in International Mathematics and Science Study) dataset. This analysis focuses on math performance of 4th grade students using their percentage correct on the TIMSS math achievement test. In this study, student level factors, home factors as well as teacher-level factors are explored to identify their respective impacts on an individual student’s math test score. Specifically, this research;</p>
+<p>I would want to investigate the performance of students in the United States of America (USA) and Canada based on the 2023 <a href="https://timss2023.org/data">TIMSS</a> (Trends in International Mathematics and Science Study) dataset. TIMSS is an international measure of mathematics and science achievements of fourth and eighth grade students. The TIMSS is conducted every <a href="https://www.iea.nl/studies/iea/timss">four years</a> at the fourth and eighth grade levels. In addition to standardized achievement tests in math and science, TIMSS also collects information of school resources, teacher training/characteristics, home background as well as curriculum implementation. A total of 64 countries participated in the 2023 cycle of TIMSS. This analysis focuses on math performance of 4th grade students using their percentage correct on the TIMSS math achievement test. In this study, student level factors, home factors as well as teacher-level factors are explored to identify their respective impacts on an individual student’s math test score. Specifically, this research seeks to answer the following:</p>
 <ol type="1">
-<li>Explores how factors such as gender, country, student confidence among others affect the performance of a student on the math test.
+<li>What proportion of variation the performance of a student on the math test is explained by factors such as gender, country, student confidence among others?
 <ul>
-<li>Explore if there are any country-level and/or sex differences in math percentage scores. (“How does math performance vary across countries and sexes?”)</li>
-<li>Examines how various teacher characteristics influence student’s score on the math test</li>
+<li>Are here are any country-level and/or sex differences in math percentage scores? (“How does math performance vary across countries and sexes?”)</li>
+</ul></li>
+<li>How do various teacher characteristics influence student’s score on the math test?
+<ul>
+<li>Ae they are differences in students’ math percentage scores across levels of age and formal education completed?</li>
+</ul></li>
+</ol>
+<p>This report is organized as follows:</p>
+<ol type="1">
+<li>Introduction and Research Question</li>
+<li>Data Analysis
+<ul>
+<li><p>Student-Level Analysis</p>
+<ul>
+<li><p>Data Preparation</p></li>
+<li><p>Descriptive Statistics and Visualization</p></li>
+<li><p>Step-wise Regression Analysis</p>
+<p>- Difference-in-Differences Analysis</p></li>
+</ul></li>
+<li><p>Teacher-Level Analysis</p>
+<ul>
+<li><p>Data Preparation</p></li>
+<li><p>Descriptive Statistics and Visualization</p></li>
+<li><p>Step-wise Regression Analysis</p>
+<p>- Difference-in-Differences Analysis</p></li>
+</ul></li>
 </ul></li>
 </ol>
 </section>
@@ -164,7 +188,7 @@ window.Quarto = {
 </section>
 <section id="descriptive-statistics" class="level4">
 <h4 class="anchored" data-anchor-id="descriptive-statistics">Descriptive Statistics</h4>
-<p>The total sample size of the Canada and U.S.A. 4th grade students was 22806. However, due to non-response, the sample size used for this analysis was 18369; 9351 girls and 9018 boys. There were more Canadian 4th Grade students compared to the U.S.A. in the sample (<a href="#fig-Country-by-Sex" class="quarto-xref">Figure&nbsp;1</a>). The overall mean age was 10 years (S.D. = 0.390) and the average sample class score was 52% (S.D. = 0.390). About 51% of the entire sample was female with Canada accounting for about 52% of the total population of females. A comprehensive summary of the sample information can be seen in <a href="#tbl-sample-descriptives" class="quarto-xref">Table&nbsp;1</a>. The distribution of the math scores for each country and sex subgroup can be described asbimodal as shown in <a href="#fig-dist-of-math-score" class="quarto-xref">Figure&nbsp;2</a>. As shown in <a href="#fig-dist-of-math-score-country-sex-home-support" class="quarto-xref">Figure&nbsp;3</a>, it can be observed that U.S.A students had a higher Math score average with boys also having a higher average score. Students who had access to both their own rooms and internet access seemed to have a better average score compared to those who had neither (<a href="#fig-dist-of-math-score-country-sex-home-support-4" class="quarto-xref">Figure&nbsp;3 (d)</a>).</p>
+<p>The total sample size of the Canada and U.S.A. 4th grade students was 22806. However, due to non-response, the sample size used for this analysis was 18369; 9351 girls and 9018 boys. There were more Canadian 4th Grade students compared to the U.S.A. in the sample (<a href="#fig-Country-by-Sex" class="quarto-xref">Figure&nbsp;1</a>). The overall mean age was 10 years (S.D. = 0.390) and the average sample class score was 52% (S.D. = 0.390). About 51% of the entire sample was female with Canada accounting for about 52% of the total population of females. A comprehensive summary of the sample information can be seen in <a href="#tbl-sample-descriptives" class="quarto-xref">Table&nbsp;1</a>. The distribution of the math scores for each country and sex subgroup can be described as bi-modal as shown in <a href="#fig-dist-of-math-score" class="quarto-xref">Figure&nbsp;2</a>. As shown in <a href="#fig-dist-of-math-score-country-sex-home-support" class="quarto-xref">Figure&nbsp;3</a>, it can be observed that U.S.A students had a higher Math score average with boys also having a higher average score. Students who had access to both their own rooms and internet access seemed to have a better average score compared to those who had neither (<a href="#fig-dist-of-math-score-country-sex-home-support-4" class="quarto-xref">Figure&nbsp;3 (d)</a>).</p>
 <div class="cell">
 <div id="tbl-sample-descriptives" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -445,7 +469,7 @@ Figure&nbsp;2: Histogram of the Distribution of Math Scores
 <img src="ESRM-6990V_files/figure-html/fig-dist-of-math-score-country-sex-home-support-1.png" class="img-fluid figure-img" data-ref-parent="fig-dist-of-math-score-country-sex-home-support" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-dist-of-math-score-country-sex-home-support-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(a) Boxplots of the the Distribution of Scores by Country
+(a) Boxplots of the Distribution of Scores by Country
 </figcaption>
 </figure>
 </div>
@@ -457,7 +481,7 @@ Figure&nbsp;2: Histogram of the Distribution of Math Scores
 <img src="ESRM-6990V_files/figure-html/fig-dist-of-math-score-country-sex-home-support-2.png" class="img-fluid figure-img" data-ref-parent="fig-dist-of-math-score-country-sex-home-support" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-dist-of-math-score-country-sex-home-support-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(b) Boxplots of the the Distribution of Scores by Sex
+(b) Boxplots of the Distribution of Scores by Sex
 </figcaption>
 </figure>
 </div>
@@ -471,7 +495,7 @@ Figure&nbsp;2: Histogram of the Distribution of Math Scores
 <img src="ESRM-6990V_files/figure-html/fig-dist-of-math-score-country-sex-home-support-3.png" class="img-fluid figure-img" data-ref-parent="fig-dist-of-math-score-country-sex-home-support" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-dist-of-math-score-country-sex-home-support-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(c) Boxplots of the the Distribution of Scores by Country and Sex
+(c) Boxplots of the Distribution of Scores by Country and Sex
 </figcaption>
 </figure>
 </div>
@@ -483,7 +507,7 @@ Figure&nbsp;2: Histogram of the Distribution of Math Scores
 <img src="ESRM-6990V_files/figure-html/fig-dist-of-math-score-country-sex-home-support-4.png" class="img-fluid figure-img" data-ref-parent="fig-dist-of-math-score-country-sex-home-support" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-dist-of-math-score-country-sex-home-support-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(d) Boxplots of the the Distribution of Scores by Home Support
+(d) Boxplots of the Distribution of Scores by Home Support
 </figcaption>
 </figure>
 </div>
@@ -853,7 +877,7 @@ Figure&nbsp;5
 </div>
 <section id="difference-in-difference-analysis-on-combinations-of-sex-and-country" class="level5">
 <h5 class="anchored" data-anchor-id="difference-in-difference-analysis-on-combinations-of-sex-and-country">Difference-in-Difference Analysis on Combinations of Sex and Country</h5>
-<p>This section of the analysis focuses on whether there are sex and/or country specific differences in the performance of the 4th grade students on the TIMSS math test. To do this, a differences-in-differences analysis was performed on various combinations of the country and sex variables. From <a href="#tbl-Differences-in-Differences-tables" class="quarto-xref">Table&nbsp;3</a> and <a href="#fig-Differences-in-Differences-fiqures" class="quarto-xref">Figure&nbsp;6</a>, it can be observed that holding all other predictors unchanged, the predicted average math percent value for a typical 4th grade student in the U.S.A is higher than in Canada. Also, a typical Canadian or U.S.A 4th grade boy seem to have a higher predicted average math percent score than their girl counterparts. A marginal contrast analysis (<a href="#tbl-Differences-in-Differences-tables-1" class="quarto-xref">Table&nbsp;3 (a)</a>) was further performed to evaluate if these differences were statistically significant. This analysis revealed that the differences in predicted scores across all combinations of sex and country were statistically significant. In the U.S.A, boys had significantly higher predicted math scores than girls <span class="math inline">\((\text{difference}= 2.01,\ 95\%  \text{ CI } [1.38, 2.63],\ t(18357) = 6.28,\ p &lt; .001)\)</span>. Boys in Canada also had a significantly higher predicted math scores than girls<span class="math inline">\((\text{difference}= 2.01,\ 95\%  \text{ CI } [1.38, 2.63],\ t(18357) = 6.28,\ p &lt; .001)\)</span>. When comparing the average predicted scores of girls in the U.S.A. to those in Canada, the girls in the U.S.A had a significantly higher score <span class="math inline">\((\text{difference}= 5.58,\ 95\%   \text{ CI } [4.91, 6.26],\ t(18357) = 16.12,\ p &lt; .001)\)</span>. Similarly, girls in the U.S.A. also outperformed the boys in Canada <span class="math inline">\((\text{difference}= -3.58,\ 95\%   \text{ CI } [–4.51, –2.65],\ t(18357) = -7.53,\ p &lt; .001)\)</span>. Additionally, boys in the U.S.A scored significantly higher than the boys in Canada <span class="math inline">\((\text{difference}= 5.58,\ 95\%   \text{ CI } [4.91, 6.26],\ t(18357) = 16.12,\ p &lt; .001)\)</span>. In the same vein, boys in the U.S.A. also outperformed the girls in Canada by the largest margin <span class="math inline">\((\text{difference}= 7.59,\ 95\%   \text{ CI } [6.67, 8.51],\ t(18357) = 16.25,\ p &lt; .001)\)</span>.</p>
+<p>This section of the analysis focuses on whether there are sex and/or country specific differences in the performance of the 4th grade students on the TIMSS math test. To do this, a differences-in-differences analysis was performed on various combinations of the country and sex variables. From <a href="#tbl-Differences-in-Differences-tables" class="quarto-xref">Table&nbsp;3</a> and <a href="#fig-Differences-in-Differences-fiqures" class="quarto-xref">Figure&nbsp;6</a>, it can be observed that holding all other predictors unchanged, the predicted average math percent value for a typical 4th grade student in the U.S.A is higher than in Canada. Also, a typical Canadian or U.S.A 4th grade boy seem to have a higher predicted average math percent score than their girl counterparts. A marginal contrast analysis (<a href="#tbl-Differences-in-Differences-tables-2" class="quarto-xref">Table&nbsp;3 (b)</a>) was further performed to evaluate if these differences were statistically significant. This analysis revealed that the differences in predicted scores across all combinations of sex and country were statistically significant. In the U.S.A, boys had significantly higher predicted math scores than girls <span class="math inline">\((\text{difference}= 2.01,\ 95\%  \text{ CI } [1.38, 2.63],\ t(18357) = 6.28,\ p &lt; .001)\)</span>. Boys in Canada also had a significantly higher predicted math scores than girls<span class="math inline">\((\text{difference}= 2.01,\ 95\%  \text{ CI } [1.38, 2.63],\ t(18357) = 6.28,\ p &lt; .001)\)</span>. When comparing the average predicted scores of girls in the U.S.A. to those in Canada, the girls in the U.S.A had a significantly higher score <span class="math inline">\((\text{difference}= 5.58,\ 95\%   \text{ CI } [4.91, 6.26],\ t(18357) = 16.12,\ p &lt; .001)\)</span>. Similarly, girls in the U.S.A. also outperformed the boys in Canada <span class="math inline">\((\text{difference}= -3.58,\ 95\%   \text{ CI } [–4.51, –2.65],\ t(18357) = -7.53,\ p &lt; .001)\)</span>. Additionally, boys in the U.S.A scored significantly higher than the boys in Canada <span class="math inline">\((\text{difference}= 5.58,\ 95\%   \text{ CI } [4.91, 6.26],\ t(18357) = 16.12,\ p &lt; .001)\)</span>. In the same vein, boys in the U.S.A. also outperformed the girls in Canada by the largest margin <span class="math inline">\((\text{difference}= 7.59,\ 95\%   \text{ CI } [6.67, 8.51],\ t(18357) = 16.25,\ p &lt; .001)\)</span>.</p>
 <p>These findings suggest that while gender differences exist, the national level factors may play a more substantial role in the TIMSS math percent score of 4th grade students. Further research should explore some potential national level contributors like curriculum standards.</p>
 <div class="cell">
 <div id="tbl-Differences-in-Differences-tables" class="cell quarto-float quarto-figure quarto-figure-center anchored">
@@ -1074,17 +1098,463 @@ Figure&nbsp;6: Estimated Marginal Means of Predicted Math Scores by Sex and Coun
 </section>
 <section id="descriptive-statistics-1" class="level4">
 <h4 class="anchored" data-anchor-id="descriptive-statistics-1">Descriptive Statistics</h4>
-<p>The total sample size of the Canada and U.S.A. 4th grade students was 22806. However, due to non-response, the sample size used for this analysis was 18369; 9351 girls and 9018 boys. There were more Canadian 4th Grade students compared to the U.S.A. in the sample (<a href="#fig-Country-by-Sex" class="quarto-xref">Figure&nbsp;1</a>). The overall mean age was 10 years (S.D. = 0.390) and the average sample class score was 52% (S.D. = 0.390). About 51% of the entire sample was female with Canada accounting for about 52% of the total population of females. A comprehensive summary of the sample information can be seen in <a href="#tbl-sample-descriptives" class="quarto-xref">Table&nbsp;1</a>. The distribution of the math scores for each country and sex subgroup can be described asbimodal as shown in <a href="#fig-dist-of-math-score" class="quarto-xref">Figure&nbsp;2</a>. As shown in <a href="#fig-dist-of-math-score-country-sex-home-support" class="quarto-xref">Figure&nbsp;3</a>, it can be observed that U.S.A students had a higher Math score average with boys also having a higher average score. Students who had access to both their own rooms and internet access seemed to have a better average score compared to those who had neither (<a href="#fig-dist-of-math-score-country-sex-home-support-4" class="quarto-xref">Figure&nbsp;3 (d)</a>).</p>
+<p>The total sample size of the Canada and U.S.A. 4th grade was 26293. However, due to non-response, the sample size used for this analysis was 18194; 15612 females, 2430 males and 152 other. The average math percent score for the 4th grade students were similar for male (M = 50.4, S.D. = 24.4) and female teachers (M = 50.4, S.D. = 24.1) with “other” having a relatively lower average (M = 45.5, S.D. = 23.7). A majority of the teachers (93.5%) were between 25 - 59 years old with the rest being under 25 years (3.8%) or over 60 years (2.7%). With regards to the level of formal education, 69.1% of the teachers had a bachelor’s degree or equivalent followed by those with a master’s degree or equivalent at 30.4%. As shown in <a href="#fig-age-by-education" class="quarto-xref">Figure&nbsp;7</a>, only teachers between 30 - 39 years and 50 - 59 years had PhD’s or equivalent. <a href="#tbl-tch-sample-descriptives" class="quarto-xref">Table&nbsp;4</a> provides a comprehensive summary of the descriptive statistics of the sample.</p>
+<div class="cell">
 <div id="tbl-tch-sample-descriptives" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tch-sample-descriptives-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;4: Sample Descriptive Statistics for Teacher Dataset
 </figcaption>
 <div aria-describedby="tbl-tch-sample-descriptives-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div>
+<div class="cell-output-display">
+<div class="Rtable1">
+<table class="Rtable1 do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th class="rowlabel firstrow lastrow" data-quarto-table-cell-role="th"></th>
+<th class="firstrow lastrow" data-quarto-table-cell-role="th"><span class="stratlabel">Female<br>
+<span class="stratn">(N=15612)</span></span></th>
+<th class="firstrow lastrow" data-quarto-table-cell-role="th"><span class="stratlabel">Male<br>
+<span class="stratn">(N=2430)</span></span></th>
+<th class="firstrow lastrow" data-quarto-table-cell-role="th"><span class="stratlabel">Other<br>
+<span class="stratn">(N=152)</span></span></th>
+<th class="firstrow lastrow" data-quarto-table-cell-role="th"><span class="stratlabel">Overall<br>
+<span class="stratn">(N=18194)</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="rowlabel firstrow">Mathematics Percent Correct Points Scored</td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+</tr>
+<tr class="even">
+<td class="rowlabel">Mean (SD)</td>
+<td>50.4 (24.1)</td>
+<td>50.4 (24.4)</td>
+<td>45.5 (23.7)</td>
+<td>50.4 (24.1)</td>
+</tr>
+<tr class="odd">
+<td class="rowlabel lastrow">Median [Min, Max]</td>
+<td class="lastrow">50.0 [0, 100]</td>
+<td class="lastrow">50.0 [0, 100]</td>
+<td class="lastrow">42.3 [5.26, 96.3]</td>
+<td class="lastrow">50.0 [0, 100]</td>
+</tr>
+<tr class="even">
+<td class="rowlabel firstrow">Age of Teacher</td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+</tr>
+<tr class="odd">
+<td class="rowlabel">Under 25</td>
+<td>660 (4.2%)</td>
+<td>23 (0.9%)</td>
+<td>0 (0%)</td>
+<td>683 (3.8%)</td>
+</tr>
+<tr class="even">
+<td class="rowlabel">25–29</td>
+<td>2020 (12.9%)</td>
+<td>200 (8.2%)</td>
+<td>13 (8.6%)</td>
+<td>2233 (12.3%)</td>
+</tr>
+<tr class="odd">
+<td class="rowlabel">30–39</td>
+<td>4154 (26.6%)</td>
+<td>557 (22.9%)</td>
+<td>45 (29.6%)</td>
+<td>4756 (26.1%)</td>
+</tr>
+<tr class="even">
+<td class="rowlabel">40–49</td>
+<td>5100 (32.7%)</td>
+<td>795 (32.7%)</td>
+<td>45 (29.6%)</td>
+<td>5940 (32.6%)</td>
+</tr>
+<tr class="odd">
+<td class="rowlabel">50–59</td>
+<td>3357 (21.5%)</td>
+<td>711 (29.3%)</td>
+<td>21 (13.8%)</td>
+<td>4089 (22.5%)</td>
+</tr>
+<tr class="even">
+<td class="rowlabel lastrow">60 or more</td>
+<td class="lastrow">321 (2.1%)</td>
+<td class="lastrow">144 (5.9%)</td>
+<td class="lastrow">28 (18.4%)</td>
+<td class="lastrow">493 (2.7%)</td>
+</tr>
+<tr class="odd">
+<td class="rowlabel firstrow">Sex of Teacher</td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+</tr>
+<tr class="even">
+<td class="rowlabel">Female</td>
+<td>15612 (100%)</td>
+<td>0 (0%)</td>
+<td>0 (0%)</td>
+<td>15612 (85.8%)</td>
+</tr>
+<tr class="odd">
+<td class="rowlabel">Male</td>
+<td>0 (0%)</td>
+<td>2430 (100%)</td>
+<td>0 (0%)</td>
+<td>2430 (13.4%)</td>
+</tr>
+<tr class="even">
+<td class="rowlabel lastrow">Other</td>
+<td class="lastrow">0 (0%)</td>
+<td class="lastrow">0 (0%)</td>
+<td class="lastrow">152 (100%)</td>
+<td class="lastrow">152 (0.8%)</td>
+</tr>
+<tr class="odd">
+<td class="rowlabel firstrow">Level of Formal Education Completed</td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+</tr>
+<tr class="even">
+<td class="rowlabel">Post-secondary, non-tertiary education</td>
+<td>9 (0.1%)</td>
+<td>0 (0%)</td>
+<td>0 (0%)</td>
+<td>9 (0.0%)</td>
+</tr>
+<tr class="odd">
+<td class="rowlabel">Short-cycle tertiary education</td>
+<td>6 (0.0%)</td>
+<td>0 (0%)</td>
+<td>0 (0%)</td>
+<td>6 (0.0%)</td>
+</tr>
+<tr class="even">
+<td class="rowlabel">Bachelor’s or equivalent</td>
+<td>10894 (69.8%)</td>
+<td>1525 (62.8%)</td>
+<td>151 (99.3%)</td>
+<td>12570 (69.1%)</td>
+</tr>
+<tr class="odd">
+<td class="rowlabel">Master’s or equivalent</td>
+<td>4661 (29.9%)</td>
+<td>866 (35.6%)</td>
+<td>1 (0.7%)</td>
+<td>5528 (30.4%)</td>
+</tr>
+<tr class="even">
+<td class="rowlabel lastrow">Doctor or equivalent</td>
+<td class="lastrow">42 (0.3%)</td>
+<td class="lastrow">39 (1.6%)</td>
+<td class="lastrow">0 (0%)</td>
+<td class="lastrow">81 (0.4%)</td>
+</tr>
+<tr class="odd">
+<td class="rowlabel firstrow">Years of Teaching</td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+</tr>
+<tr class="even">
+<td class="rowlabel">Mean (SD)</td>
+<td>14.1 (8.70)</td>
+<td>15.9 (8.78)</td>
+<td>17.2 (10.0)</td>
+<td>14.4 (8.75)</td>
+</tr>
+<tr class="odd">
+<td class="rowlabel lastrow">Median [Min, Max]</td>
+<td class="lastrow">14.0 [1.00, 43.0]</td>
+<td class="lastrow">16.0 [1.00, 37.0]</td>
+<td class="lastrow">17.0 [1.00, 40.0]</td>
+<td class="lastrow">14.0 [1.00, 43.0]</td>
+</tr>
+<tr class="even">
+<td class="rowlabel firstrow">Number of Students in Class</td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+</tr>
+<tr class="odd">
+<td class="rowlabel">Mean (SD)</td>
+<td>23.6 (5.88)</td>
+<td>24.3 (5.35)</td>
+<td>22.8 (4.13)</td>
+<td>23.7 (5.80)</td>
+</tr>
+<tr class="even">
+<td class="rowlabel lastrow">Median [Min, Max]</td>
+<td class="lastrow">24.0 [1.00, 117]</td>
+<td class="lastrow">25.0 [4.00, 46.0]</td>
+<td class="lastrow">25.0 [14.0, 27.0]</td>
+<td class="lastrow">24.0 [1.00, 117]</td>
+</tr>
+<tr class="odd">
+<td class="rowlabel firstrow">Homework Frequency</td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+</tr>
+<tr class="even">
+<td class="rowlabel">I do not assign mathematics homework</td>
+<td>5146 (33.0%)</td>
+<td>767 (31.6%)</td>
+<td>56 (36.8%)</td>
+<td>5969 (32.8%)</td>
+</tr>
+<tr class="odd">
+<td class="rowlabel">Less than once a week</td>
+<td>3166 (20.3%)</td>
+<td>400 (16.5%)</td>
+<td>47 (30.9%)</td>
+<td>3613 (19.9%)</td>
+</tr>
+<tr class="even">
+<td class="rowlabel">1 or 2 times a week</td>
+<td>3931 (25.2%)</td>
+<td>440 (18.1%)</td>
+<td>13 (8.6%)</td>
+<td>4384 (24.1%)</td>
+</tr>
+<tr class="odd">
+<td class="rowlabel">3 or 4 times a week</td>
+<td>2193 (14.0%)</td>
+<td>500 (20.6%)</td>
+<td>20 (13.2%)</td>
+<td>2713 (14.9%)</td>
+</tr>
+<tr class="even">
+<td class="rowlabel lastrow">Every day</td>
+<td class="lastrow">1176 (7.5%)</td>
+<td class="lastrow">323 (13.3%)</td>
+<td class="lastrow">16 (10.5%)</td>
+<td class="lastrow">1515 (8.3%)</td>
+</tr>
+<tr class="odd">
+<td class="rowlabel firstrow">School Emphasis on Teacher's Academic Success</td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+</tr>
+<tr class="even">
+<td class="rowlabel">Mean (SD)</td>
+<td>9.90 (2.17)</td>
+<td>10.2 (2.65)</td>
+<td>9.17 (3.33)</td>
+<td>9.93 (2.26)</td>
+</tr>
+<tr class="odd">
+<td class="rowlabel lastrow">Median [Min, Max]</td>
+<td class="lastrow">9.72 [4.33, 17.0]</td>
+<td class="lastrow">10.1 [0.698, 17.0]</td>
+<td class="lastrow">8.27 [5.70, 17.0]</td>
+<td class="lastrow">9.72 [0.698, 17.0]</td>
+</tr>
+<tr class="even">
+<td class="rowlabel firstrow">Safe and Orderly Schools-Teacher</td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+</tr>
+<tr class="odd">
+<td class="rowlabel">Mean (SD)</td>
+<td>9.45 (2.23)</td>
+<td>9.68 (2.30)</td>
+<td>7.89 (2.35)</td>
+<td>9.46 (2.24)</td>
+</tr>
+<tr class="even">
+<td class="rowlabel lastrow">Median [Min, Max]</td>
+<td class="lastrow">9.32 [4.16, 13.1]</td>
+<td class="lastrow">9.32 [4.16, 13.1]</td>
+<td class="lastrow">7.86 [4.16, 13.1]</td>
+<td class="lastrow">9.32 [4.16, 13.1]</td>
+</tr>
+<tr class="odd">
+<td class="rowlabel firstrow">Teachers Job Satisfaction</td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+</tr>
+<tr class="even">
+<td class="rowlabel">Mean (SD)</td>
+<td>9.41 (2.14)</td>
+<td>9.68 (2.14)</td>
+<td>9.80 (2.25)</td>
+<td>9.45 (2.14)</td>
+</tr>
+<tr class="odd">
+<td class="rowlabel lastrow">Median [Min, Max]</td>
+<td class="lastrow">9.59 [4.59, 12.3]</td>
+<td class="lastrow">9.59 [4.59, 12.3]</td>
+<td class="lastrow">9.05 [6.29, 12.3]</td>
+<td class="lastrow">9.59 [4.59, 12.3]</td>
+</tr>
+<tr class="even">
+<td class="rowlabel firstrow">Teaching Limited by Student Not Ready</td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+</tr>
+<tr class="odd">
+<td class="rowlabel">Mean (SD)</td>
+<td>9.00 (1.66)</td>
+<td>9.24 (1.68)</td>
+<td>8.70 (1.10)</td>
+<td>9.03 (1.66)</td>
+</tr>
+<tr class="even">
+<td class="rowlabel lastrow">Median [Min, Max]</td>
+<td class="lastrow">8.86 [3.23, 15.2]</td>
+<td class="lastrow">8.86 [4.75, 15.2]</td>
+<td class="lastrow">9.33 [6.65, 13.6]</td>
+<td class="lastrow">8.86 [3.23, 15.2]</td>
+</tr>
+<tr class="odd">
+<td class="rowlabel firstrow">Teachers Majored in Education and Mathematics</td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+<td class="firstrow"></td>
+</tr>
+<tr class="even">
+<td class="rowlabel">Major in Edu and Math</td>
+<td>1856 (11.9%)</td>
+<td>438 (18.0%)</td>
+<td>47 (30.9%)</td>
+<td>2341 (12.9%)</td>
+</tr>
+<tr class="odd">
+<td class="rowlabel">Major in Edu but not Math</td>
+<td>11429 (73.2%)</td>
+<td>1440 (59.3%)</td>
+<td>64 (42.1%)</td>
+<td>12933 (71.1%)</td>
+</tr>
+<tr class="even">
+<td class="rowlabel">Major in Math but not Edu</td>
+<td>264 (1.7%)</td>
+<td>86 (3.5%)</td>
+<td>0 (0%)</td>
+<td>350 (1.9%)</td>
+</tr>
+<tr class="odd">
+<td class="rowlabel lastrow">All other Majors</td>
+<td class="lastrow">2063 (13.2%)</td>
+<td class="lastrow">466 (19.2%)</td>
+<td class="lastrow">41 (27.0%)</td>
+<td class="lastrow">2570 (14.1%)</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
+</div>
+</figure>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-age-by-education" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-age-by-education-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ESRM-6990V_files/figure-html/fig-age-by-education-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-age-by-education-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Number of Teachers by Age and Education Level
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="fig-dist-of-math-score-country-sex-home" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dist-of-math-score-country-sex-home-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-dist-of-math-score-country-sex-home" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-dist-of-math-score-country-sex-home-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-dist-of-math-score-country-sex-home-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ESRM-6990V_files/figure-html/fig-dist-of-math-score-country-sex-home-1.png" class="img-fluid figure-img" data-ref-parent="fig-dist-of-math-score-country-sex-home" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-dist-of-math-score-country-sex-home-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Boxplots of Students’ Math Scores by Teachers Age and Education Level
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-dist-of-math-score-country-sex-home" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-dist-of-math-score-country-sex-home-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-dist-of-math-score-country-sex-home-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ESRM-6990V_files/figure-html/fig-dist-of-math-score-country-sex-home-2.png" class="img-fluid figure-img" data-ref-parent="fig-dist-of-math-score-country-sex-home" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-dist-of-math-score-country-sex-home-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Boxplots of Students’ Math Scores by Age of Teachers
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-dist-of-math-score-country-sex-home" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-dist-of-math-score-country-sex-home-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-dist-of-math-score-country-sex-home-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ESRM-6990V_files/figure-html/fig-dist-of-math-score-country-sex-home-3.png" class="img-fluid figure-img" data-ref-parent="fig-dist-of-math-score-country-sex-home" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-dist-of-math-score-country-sex-home-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Boxplots of Scores Students’ Math Scores by Teacher’s Level of Education
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-dist-of-math-score-country-sex-home" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-dist-of-math-score-country-sex-home-4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-dist-of-math-score-country-sex-home-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ESRM-6990V_files/figure-html/fig-dist-of-math-score-country-sex-home-4.png" class="img-fluid figure-img" data-ref-parent="fig-dist-of-math-score-country-sex-home" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-dist-of-math-score-country-sex-home-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) Boxplots of Students’ Math Scores by Sex of Teachers
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dist-of-math-score-country-sex-home-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Boxplots of the the Distribution of Scores by Country, Sex and Home Support
+</figcaption>
 </figure>
 </div>
 

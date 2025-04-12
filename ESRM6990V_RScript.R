@@ -6,7 +6,9 @@
     install.packages("pacman")
     library(pacman)
   } 
-  p_load(tidyverse, dplyr, rstatix, psych, knitr, table1, ggcorrplot, corrplot, regclass, kableExtra, broom, relaimpo, haven, QuantPsyc, jtools, ggeffects, marginaleffects, modelbased, parameters, arm)
+  p_load(tidyverse, dplyr, rstatix, psych, knitr, table1, ggcorrplot, corrplot, regclass, 
+         kableExtra, broom, relaimpo, haven, QuantPsyc, jtools, ggeffects, marginaleffects, 
+         modelbased, parameters, arm, Hmisc, labelled)
   
   load("C:/Users/Henretta Tawiah/Desktop/School/PhD/Spring 2025/R/Project/ESRM6990V/G4_HOME_STUDENT.Rdata")
   
@@ -53,17 +55,17 @@
   
   ## Proportion of Sex by Country
   Student_Sex_by_country <- Final_Home_Student |> group_by(Country, Sex) |> 
-    summarize(Count = n(), Proportion = (n() / nrow(Final_Home_Student)) * 100)
+    dplyr::summarize(Count = n(), Proportion = (n() / nrow(Final_Home_Student)) * 100)
   
-  ## Plot for Count or Proportion of Various Categorical Predictors (stack vs dodge)
+  ## Plot for Number of sudents by Country and Sex
   Fig1 <- ggplot(Student_Sex_by_country, aes(x = Country, y = Count, fill = Sex)) + 
-    geom_bar(stat = "identity", position = "dodge") +  labs(x = "Country", y = "NUmber of Students", title = "Number of sudents by Country and Sex") + 
-    scale_fill_brewer(palette = "Blues", name = "Level") + theme_bw()
+    geom_bar(stat = "identity", position = "dodge") +  labs(x = "Country", y = "NUmber of Students") + 
+    scale_fill_brewer(palette = "Blues", name = "Sex") + theme_bw()
   
   ## Visualizing Math Scores
   Fig2 <- ggplot(Final_Home_Student, aes(x = Math_Percent_Correct, fill = interaction(Country, Sex))) +
     geom_histogram(bins = 30, color = "black", alpha = 0.7) + 
-    labs(title = "Distribution of Math Scores", x = "Math Score (%)", y = "Frequency") +
+    labs(x = "Math Score (%)", y = "Frequency") +
     facet_grid(rows = vars(Country), cols = vars(Sex)) + 
     scale_fill_brewer(palette = "Blues") +  # Uses a blue gradient
     theme_bw()
@@ -71,32 +73,32 @@
   ## Visualizing Math Scores by Country
   Fig3 <- ggplot(Final_Home_Student, aes(x = Country, y = Math_Percent_Correct, fill = Country)) +
     geom_boxplot() +
-    labs(title = "Math Scores by Country", x = "Country", y = "Math Score (%)") +
+    labs(x = "Country", y = "Math Score (%)") +
     scale_fill_manual(values = c("#9AD1D0", "#2C5985")) + 
     theme_bw()
   
   ## Visualizing Math Scores by Sex
   Fig4 <- ggplot(Final_Home_Student, aes(x = Sex, y = Math_Percent_Correct, fill = Sex)) +
     geom_boxplot() +
-    labs(title = "Math Scores by Sex", x = "Sex", y = "Math Score (%)") +
+    labs( x = "Sex", y = "Math Score (%)") +
     scale_fill_manual(breaks = Final_Home_Student$Sex,
                       values = c ("#BCE4D8", "#2D5E88"))+ theme_bw()
   
   ## Visualizing Math Scores by COuntry and Sex
   Fig5 <- ggplot(Final_Home_Student, aes(x = Country, y = Math_Percent_Correct, fill = Sex)) +
     geom_boxplot() +
-    labs(title = "Math Scores by Country and Sex", x = "Country", y = "Math Score (%)") +
+    labs( x = "Country", y = "Math Score (%)") +
     scale_fill_brewer("blues")+ theme_bw()
   
   ## Visualizing Math Scores by Home Support
   Fig6 <- ggplot(Final_Home_Student, aes(x = Number_of_Home_Study_Supports, y = Math_Percent_Correct, fill = Number_of_Home_Study_Supports)) +
     geom_boxplot() +
-    labs(title = "Math Scores by Number of Home Spport", x = "Sex", y = "Math Score (%)") +
+    labs( x = "Home Support", y = "Math Score (%)") +
     scale_fill_brewer("blues") +
     theme_bw()+
     theme(axis.text.x = element_text(angle = 45, hjust = 1))
   
-  ## Subsetting Muneric Variables only
+  ## Subsetting Numeric Variables only
   std_cor_data <- Final_Home_Student |> dplyr::select(Age:Confident_in_Math, Math_Percent_Correct)
   
   ## Correlation Matrix
@@ -165,32 +167,117 @@
   
   ## Renaming Columns
   Teacher_Student2 <- Teacher_Student |> 
-    rename(Teacher_ID = IDTEACH, Years_Teaching = ATBG01, Sex = ATBG02, Age = ATBG03, 
-           Level_of_Formal_Educ = ATBG04, Class_Size = ATBG10A, 
-           Homework_Freq = ATBM07A, Tch_Academic_Success = ATBGEAS, 
-           Safe_Orderly_Schools = ATBGSOS, Tch_Job_Satis = ATBGTJS, Student_not_Ready 
-           = ATBGLSN, Tch_Educ_Math_Major = ATDMMEM, Math_Instruction_Hours = ATDMHW,
-           Math_Percent_Correct = ASDMCORP)
+    dplyr::rename(Teacher_ID = IDTEACH, Years_Teaching = ATBG01, Sex = ATBG02, Age = ATBG03, 
+           Formal_Educ = ATBG04, Class_Size = ATBG10A, Homework_Freq = ATBM07A, 
+           Academic_Success = ATBGEAS, Safe_Orderly_Schools = ATBGSOS, 
+           Job_Satis = ATBGTJS, Student_not_Ready = ATBGLSN, Math_Major = ATDMMEM, 
+           Instruction_Hours = ATDMHW, Math_Percent_Correct = ASDMCORP)
   #str(Teacher_Student2)
   
   ## Dropping NAs
   Clean_Teacher_Student2 <- Teacher_Student2 |> na.omit()
   #str(Clean_Teacher_Student2)
   
-  ## Converting Sex and Country Columns to factors
+  ## Recode labels for Formal_Educ
+  Clean_Teacher_Student2$Formal_Educ <- factor(
+    Clean_Teacher_Student2$Formal_Educ,
+    levels = c(3, 4, 5, 6, 7),
+    labels = c("Post-secondary, non-tertiary education",
+               "Short-cycle tertiary education",
+               "Bachelor’s or equivalent",
+               "Master’s or equivalent",
+               "Doctor or equivalent"),
+    ordered = TRUE
+  )
+
+  ## Converting Sex and Homework_Freq, Math_Major, Age Columns to factors
   Final_Teacher_Student <- Clean_Teacher_Student2 |> mutate(
-    across(c(Sex, Level_of_Formal_Educ, Homework_Freq, Tch_Educ_Math_Major, Age), ~ as_factor(.x)), 
+    across(c(Sex, Homework_Freq, Math_Major, Age), ~ as_factor(.x)), 
     Sex = droplevels(Sex), Homework_Freq = droplevels(Homework_Freq), 
-    Level_of_Formal_Educ = droplevels(Level_of_Formal_Educ), 
-    Tch_Educ_Math_Major = droplevels(Tch_Educ_Math_Major), Age = droplevels(Age))
+    Formal_Educ = droplevels(Formal_Educ), Math_Major = droplevels(Math_Major), 
+    Age = droplevels(Age))
   #str(Final_Teacher_Student)
+  
+  ## Recode <other> as Other in Sex
+  Final_Teacher_Student$Sex <- as.character(Final_Teacher_Student$Sex)
+  Final_Teacher_Student$Sex[Final_Teacher_Student$Sex == "<Other>"] <- "Other"
+  Final_Teacher_Student$Sex <- factor(Final_Teacher_Student$Sex)
+  
+  # Convert all labelled variables:
+  Final_Teacher_Student <- Final_Teacher_Student |> 
+    mutate(across(where(is.labelled), ~ if (is.numeric(.)) as.numeric(.) else to_factor(.)))
 }
 
 # (6) %%%%%%%%%%%%%%%%%%%% Sample Descriptive Statistics for Student_Teacher Data %%%%%%%%%%%%%%%%%----
 {
-  ## Sample Descriptive Statistics
+  # Assigning descriptive labels to variables
+  label(Final_Teacher_Student$Math_Percent_Correct) <- "Mathematics Percent Correct Points Scored"
+  label(Final_Teacher_Student$Age) <- "Age of Teacher"
+  label(Final_Teacher_Student$Sex) <- "Sex of Teacher"
+  label(Final_Teacher_Student$Years_Teaching) <- "Years of Teaching"
+  label(Final_Teacher_Student$Class_Size) <- "Number of Students in Class"
+  label(Final_Teacher_Student$Homework_Freq) <- "Homework Frequency"
+  label(Final_Teacher_Student$Formal_Educ) <- "Level of Formal Education Completed"
+  label(Final_Teacher_Student$Academic_Success) <- "School Emphasis on Teacher's Academic Success"
+  label(Final_Teacher_Student$Safe_Orderly_Schools) <- "Safe and Orderly Schools-Teacher"
+  label(Final_Teacher_Student$Job_Satis) <- "Teachers Job Satisfaction"
+  label(Final_Teacher_Student$Student_not_Ready) <- "Teaching Limited by Student Not Ready"
+  label(Final_Teacher_Student$Math_Major) <- "Teachers Majored in Education and Mathematics"
   
-  table1(~ Math_Percent_Correct + Age + Sex + Disorderly_Behavior + Student_Bullying +  
-           Instructional_Clarity + Digital_Self_Efficacy + Sense_of_School_Belonging + 
-           Like_Learning_Math + Confident_in_Math + Number_of_Home_Study_Supports | Country, data = Final_Home_Student)
+  ## Sample Descriptive Statistics
+  tch_tb1 <- table1(~ Math_Percent_Correct + Age + Sex  + Formal_Educ + Years_Teaching + Class_Size + 
+                      Homework_Freq + Academic_Success + Safe_Orderly_Schools + Job_Satis + Student_not_Ready +
+                      Math_Major| Sex, data = Final_Teacher_Student)
+  
+  ## Proportion of Age and Formal Education
+  Age_by_Form_Educ <- Final_Teacher_Student |> group_by(Age, Formal_Educ) |> 
+    dplyr::summarise(Count = n(), Proportion = (n() / nrow(Final_Teacher_Student)) * 100)
+  
+  ## Plot of Number of Teachers by Age and Education Level
+  tch_fig1 <- ggplot(Age_by_Form_Educ, aes(x = Age, y = Count, fill = Formal_Educ)) + 
+    geom_bar(stat = "identity", position = "dodge") +  
+    labs(x = "Age", y = "NUmber of Teachers") + 
+    scale_fill_brewer(palette = "Blues", name = "Level of Formal Education") + theme_bw()
+  
+  ## Visualizing Math Scores by Age and Education Level
+  tch_fig2 <- ggplot(Final_Teacher_Student, aes(x = Age, y = Math_Percent_Correct, fill = Formal_Educ)) +
+    geom_boxplot() +
+    labs( x = "Age", y = "Math Score (%)") +
+    scale_fill_brewer("blues")+ theme_bw()
+  
+  ## Visualizing Math Scores by Teacher's Age
+  tch_fig3 <- ggplot(Final_Teacher_Student, aes(x = Age, y = Math_Percent_Correct, fill = Age)) +
+    geom_boxplot() +
+    labs( x = "Age", y = "Math Score (%)") +
+    scale_fill_manual(values = c("#9AD1D0", "#2C5985","#5E9FA3", "#B5CFEA", "#4C7C9B", "#A3D5D3")) + 
+    theme_bw()
+  
+  ## Visualizing Math Scores by Teacher's Level of Formal Education
+  tch_fig4 <- ggplot(Final_Teacher_Student, aes(x = Formal_Educ, y = Math_Percent_Correct, fill = Formal_Educ)) +
+    geom_boxplot() +
+    labs( x = "Formal Education", y = "Math Score (%)") +
+    scale_fill_manual(values = c("#BCE4D8", "#2D5E88","#83B8B0", "#A1C4E4", "#3F8DAE")) + 
+    theme_bw()+
+    theme(axis.text.x = element_text(angle = 20, hjust = 1))
+  
+  ## Visualizing Math Scores by Sex
+  tch_fig5 <- ggplot(Final_Teacher_Student, aes(x = Sex, y = Math_Percent_Correct, fill = Sex)) +
+    geom_boxplot() +
+    labs(x = "Sex", y = "Math Score (%)") +
+    scale_fill_brewer("blues") +
+    theme_bw()
+  
+  ## Sub-setting Numeric Variables only
+  tch_cor_data <- Final_Teacher_Student |> dplyr::select(Math_Percent_Correct, Years_Teaching, Class_Size, 
+                                                         Academic_Success:Student_not_Ready, Instruction_Hours)
+  
+  ## Correlation Matrix
+  tch_cor <- round(cor(tch_cor_data), 1)
+  
+  ## Matrix of Correlation P-Values
+  p_tch_cor <- cor_pmat(tch_cor_data)
+  
+  ## Correlation Plot
+  tch_fig6 <- ggcorrplot( tch_cor, type = "upper", outline.col = "black", 
+                      ggtheme = ggplot2::theme_minimal, colors = c("#6D9EC1", "white", "#E46726"), lab = TRUE)
 }

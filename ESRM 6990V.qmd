@@ -1,7 +1,7 @@
 ---
-title: "ESRM 6990V Class Project"
+title: "Understanding 4th Grade Math Percent Correct through Student and Teacher Characteristics: A Regression Study using TIMSS 2023"
 author: "Henrietta Kadi Tettey-Tawiah"
-format: pdf
+format: html
 editor: visual
 execute: 
   echo: false #hides code 
@@ -12,15 +12,40 @@ execute:
 bibliography: references.bib
 ---
 
-# TIMSS DATA
+(A Regression-Based Investigation of Student- and Teacher-Level Influences on Math Performance in TIMSS 2023)
 
 ## Introduction: Research Scenario and Research Questions
 
-The researcher would want to investigate the performance of students in the United States of America (USA) and Canada based on the 2023 [TIMSS](https://timss2023.org/data) (Trends in International Mathematics and Science Study) dataset. This analysis focuses on math performance of 4th grade students using their percentage correct on the TIMSS math achievement test. In this study, student level factors, home factors as well as teacher-level factors are explored to identify their respective impacts on an individual student's math test score. Specifically, this research;
+I would want to investigate the performance of students in the United States of America (USA) and Canada based on the 2023 [TIMSS](https://timss2023.org/data) (Trends in International Mathematics and Science Study) dataset. TIMSS is an international measure of mathematics and science achievements of fourth and eighth grade students. The TIMSS is conducted every [four years](https://www.iea.nl/studies/iea/timss) at the fourth and eighth grade levels. In addition to standardized achievement tests in math and science, TIMSS also collects information of school resources, teacher training/characteristics, home background as well as curriculum implementation. A total of 64 countries participated in the 2023 cycle of TIMSS. This analysis focuses on math performance of 4th grade students using their percentage correct on the TIMSS math achievement test. In this study, student level factors, home factors as well as teacher-level factors are explored to identify their respective impacts on an individual student's math test score. Specifically, this research seeks to answer the following:
 
-1.  Explores how factors such as gender, country, student confidence among others affect the performance of a student on the math test.
-    -   Explore if there are any country-level and/or sex differences in math percentage scores. ("How does math performance vary across countries and sexes?")
-    -   Examines how various teacher characteristics influence student's score on the math test
+1.  What proportion of variation the performance of a student on the math test is explained by factors such as gender, country, student confidence among others?
+    -   Are here are any country-level and/or sex differences in math percentage scores? ("How does math performance vary across countries and sexes?")
+2.  How do various teacher characteristics influence student's score on the math test?
+    -   Are they are differences in students' math percentage scores across levels of age and formal education completed?
+
+This report is organized as follows:
+
+1.  Introduction and Research Question
+2.  Data Analysis
+    -   Student-Level Analysis
+
+        -   Data Preparation
+
+        -   Descriptive Statistics and Visualization
+
+        -   Step-wise Regression Analysis
+
+            \- Difference-in-Differences Analysis
+
+    -   Teacher-Level Analysis
+
+        -   Data Preparation
+
+        -   Descriptive Statistics and Visualization
+
+        -   Step-wise Regression Analysis
+
+            \- Difference-in-Differences Analysis
 
 ## Data Analysis
 
@@ -62,7 +87,7 @@ The data preparation stage began with renaming the columns in the `Home_Student`
 
 #### Descriptive Statistics
 
-The total sample size of the Canada and U.S.A. 4th grade students was 22806. However, due to non-response, the sample size used for this analysis was 18369; 9351 girls and 9018 boys. There were more Canadian 4th Grade students compared to the U.S.A. in the sample (@fig-Country-by-Sex). The overall mean age was 10 years (S.D. = 0.390) and the average sample class score was 52% (S.D. = 0.390). About 51% of the entire sample was female with Canada accounting for about 52% of the total population of females. A comprehensive summary of the sample information can be seen in @tbl-sample-descriptives. The distribution of the math scores for each country and sex subgroup can be described asbimodal as shown in @fig-dist-of-math-score. As shown in @fig-dist-of-math-score-country-sex-home-support, it can be observed that U.S.A students had a higher Math score average with boys also having a higher average score. Students who had access to both their own rooms and internet access seemed to have a better average score compared to those who had neither (@fig-dist-of-math-score-country-sex-home-support-4).
+The total sample size of the Canada and U.S.A. 4th grade students was 22806. However, due to non-response, the sample size used for this analysis was 18369; 9351 girls and 9018 boys. There were more Canadian 4th Grade students compared to the U.S.A. in the sample (@fig-Country-by-Sex). The overall mean age was 10 years (S.D. = 0.390) and the average sample class score was 52% (S.D. = 0.390). About 51% of the entire sample was female with Canada accounting for about 52% of the total population of females. A comprehensive summary of the sample information can be seen in @tbl-sample-descriptives. The distribution of the math scores for each country and sex subgroup can be described as bi-modal as shown in @fig-dist-of-math-score. As shown in @fig-dist-of-math-score-country-sex-home-support, it can be observed that U.S.A students had a higher Math score average with boys also having a higher average score. Students who had access to both their own rooms and internet access seemed to have a better average score compared to those who had neither (@fig-dist-of-math-score-country-sex-home-support-4). As shown in @fig-Correlations, the correlations between the predictors and math score were in the moderate to low range.
 
 ```{r}
 #| label: tbl-sample-descriptives
@@ -95,10 +120,10 @@ Fig2
 #| layout-nrow: 2
 #| fig-cap: Boxplots of the the Distribution of Scores by Country, Sex and Home Support
 #| fig-subcap:
-#| - "Boxplots of the the Distribution of Scores by Country"
-#| - "Boxplots of the the Distribution of Scores by Sex "
-#| - "Boxplots of the the Distribution of Scores by Country and Sex"
-#| - Boxplots of the the Distribution of Scores by Home Support
+#| - "Boxplots of the Distribution of Scores by Country"
+#| - "Boxplots of the Distribution of Scores by Sex"
+#| - "Boxplots of the Distribution of Scores by Country and Sex"
+#| - Boxplots of the Distribution of Scores by Home Support
 #
 
 Fig3
@@ -116,7 +141,7 @@ Fig7
 
 #### Regression Analysis
 
-A step-wise regression model was estimated to evaluate whether the independent variables *(Country, Sex, Age, Disorderly_Behavior, Instructional_Clarity, Digital_Self_Efficacy, Student_Bullying, Like_Learning_Math, Confident_in_Math, and Number_of_Home_Study_Supports)* could predict the dependent variable, *Math_Percent_Correct* . The linear relationship between independent variables and math score was found to be statistically significant $F(11, 18357) = 439.39,\ p < .001$. As shown in @fig-Correlations, the correlations between the predictors and math score were in the moderate to low range. Appoximately $21\%$ of the total variation in math percent score was account for by its linear relationship with the predictors, $R^2 = .21,\ R^2_{adj}=.21$. Among the predictors, instructional clarity had a statistically non-significant and negative effect on math percentage value $(\beta = -.16,\ p < .001)$, suggesting that greater instructional clarity was not associated with higher math percent values in this model over and above all other predictors. The effect of Country (U.S.A.) was statistically significant and positive $(\beta = 5.58,\ p < .001)$, suggesting that holding all other predictors unchanged, 4th grade students scored 5.58% higher than those in Canada. The effect of Sex (boy) was also statistically significant and positive $(\beta = 2.01,\ p < .001)$, suggesting that controlling for all other predictors, boys in the 4th grade scored 2.01% higher than girls. Interestingly, Like_Learning_Math was found to have statistically significant and negative effect on math percent score $(\beta = -.97,\ p < .001)$. This suggests that partialling out the effects of all other predictors, and a unit increase in a student whether a student likes learning math results in a -0.97% decrease in math percent score. All other predictors in the model had a statistically significant and positive effect on math percent score. This suggests that holding all other predictirs unchanged, an increase in their respective values is expected lead to an increase in math percentage score. The details of the results from the step-wise analysis are presented in @tbl-Initial-regression-for-student-data. The predictor Confident_in_Math had the largest effect on the math percent score followed by Number_of_Home_Study_Supports_Either @tbl-Initial-regression-for-student-data-4. The predictors used in this analysis do not exhibit multicollinearity as shown in @tbl-Initial-regression-for-student-data-3. A look at the residual plots in @fig-residual-std_reg_initial show a slight non-linearity with possible non-normality from the Q-Q plot.
+A step-wise regression model was estimated to evaluate whether the independent variables *(Country, Sex, Age, Disorderly_Behavior, Instructional_Clarity, Digital_Self_Efficacy, Student_Bullying, Like_Learning_Math, Confident_in_Math, and Number_of_Home_Study_Supports)* could predict the dependent variable, *Math_Percent_Correct* . The linear relationship between independent variables and math score was found to be statistically significant $F(11, 18357) = 439.39,\ p < .001$. Appoximately $21\%$ of the total variation in math percent score was account for by its linear relationship with the predictors, $R^2 = .21,\ R^2_{adj}=.21$. Among the predictors, instructional clarity had a statistically non-significant and negative effect on math percentage value $(\beta = -.16,\ p < .001)$, suggesting that greater instructional clarity was not associated with higher math percent values in this model over and above all other predictors. The effect of Country (U.S.A.) was statistically significant and positive $(\beta = 5.58,\ p < .001)$, suggesting that holding all other predictors unchanged, 4th grade students scored 5.58% higher than those in Canada. The effect of Sex (boy) was also statistically significant and positive $(\beta = 2.01,\ p < .001)$, suggesting that controlling for all other predictors, boys in the 4th grade scored 2.01% higher than girls. Interestingly, Like_Learning_Math was found to have statistically significant and negative effect on math percent score $(\beta = -.97,\ p < .001)$. This suggests that partialling out the effects of all other predictors, and a unit increase in a student whether a student likes learning math results in a -0.97% decrease in math percent score. All other predictors in the model had a statistically significant and positive effect on math percent score. This suggests that holding all other predictirs unchanged, an increase in their respective values is expected lead to an increase in math percentage score. The details of the results from the step-wise analysis are presented in @tbl-Initial-regression-for-student-data. The predictor Confident_in_Math had the largest effect on the math percent score followed by Number_of_Home_Study_Supports_Either @tbl-Initial-regression-for-student-data-4. The predictors used in this analysis do not exhibit multicollinearity as shown in @tbl-Initial-regression-for-student-data-3. A look at the residual plots in @fig-residual-std_reg_initial show a slight non-linearity with possible non-normality from the Q-Q plot.
 
 ```{r}
 #| label: tbl-Initial-regression-for-student-data
@@ -143,7 +168,7 @@ Tbl5
 
 ##### Difference-in-Difference Analysis on Combinations of Sex and Country
 
-This section of the analysis focuses on whether there are sex and/or country specific differences in the performance of the 4th grade students on the TIMSS math test. To do this, a differences-in-differences analysis was performed on various combinations of the country and sex variables. From @tbl-Differences-in-Differences-tables and @fig-Differences-in-Differences-fiqures, it can be observed that holding all other predictors unchanged, the predicted average math percent value for a typical 4th grade student in the U.S.A is higher than in Canada. Also, a typical Canadian or U.S.A 4th grade boy seem to have a higher predicted average math percent score than their girl counterparts. A marginal contrast analysis (@tbl-Differences-in-Differences-tables-1) was further performed to evaluate if these differences were statistically significant. This analysis revealed that the differences in predicted scores across all combinations of sex and country were statistically significant. In the U.S.A, boys had significantly higher predicted math scores than girls $(\text{difference}= 2.01,\ 95\%  \text{ CI } [1.38, 2.63],\ t(18357) = 6.28,\ p < .001)$. Boys in Canada also had a significantly higher predicted math scores than girls$(\text{difference}= 2.01,\ 95\%  \text{ CI } [1.38, 2.63],\ t(18357) = 6.28,\ p < .001)$. When comparing the average predicted scores of girls in the U.S.A. to those in Canada, the girls in the U.S.A had a significantly higher score $(\text{difference}= 5.58,\ 95\%   \text{ CI } [4.91, 6.26],\ t(18357) = 16.12,\ p < .001)$. Similarly, girls in the U.S.A. also outperformed the boys in Canada $(\text{difference}= -3.58,\ 95\%   \text{ CI } [–4.51, –2.65],\ t(18357) = -7.53,\ p < .001)$. Additionally, boys in the U.S.A scored significantly higher than the boys in Canada $(\text{difference}= 5.58,\ 95\%   \text{ CI } [4.91, 6.26],\ t(18357) = 16.12,\ p < .001)$. In the same vein, boys in the U.S.A. also outperformed the girls in Canada by the largest margin $(\text{difference}= 7.59,\ 95\%   \text{ CI } [6.67, 8.51],\ t(18357) = 16.25,\ p < .001)$.
+This section of the analysis focuses on whether there are sex and/or country specific differences in the performance of the 4th grade students on the TIMSS math test. To do this, a differences-in-differences analysis was performed on various combinations of the country and sex variables. From @tbl-Differences-in-Differences-tables and @fig-Differences-in-Differences-fiqures, it can be observed that holding all other predictors unchanged, the predicted average math percent value for a typical 4th grade student in the U.S.A is higher than in Canada. Also, a typical Canadian or U.S.A 4th grade boy seem to have a higher predicted average math percent score than their girl counterparts. A marginal contrast analysis (@tbl-Differences-in-Differences-tables-2) was further performed to evaluate if these differences were statistically significant. This analysis revealed that the differences in predicted scores across all combinations of sex and country were statistically significant. In the U.S.A, boys had significantly higher predicted math scores than girls $(\text{difference}= 2.01,\ 95\%  \text{ CI } [1.38, 2.63],\ t(18357) = 6.28,\ p < .001)$. Boys in Canada also had a significantly higher predicted math scores than girls$(\text{difference}= 2.01,\ 95\%  \text{ CI } [1.38, 2.63],\ t(18357) = 6.28,\ p < .001)$. When comparing the average predicted scores of girls in the U.S.A. to those in Canada, the girls in the U.S.A had a significantly higher score $(\text{difference}= 5.58,\ 95\%   \text{ CI } [4.91, 6.26],\ t(18357) = 16.12,\ p < .001)$. Similarly, girls in the U.S.A. also outperformed the boys in Canada $(\text{difference}= -3.58,\ 95\%   \text{ CI } [–4.51, –2.65],\ t(18357) = -7.53,\ p < .001)$. Additionally, boys in the U.S.A scored significantly higher than the boys in Canada $(\text{difference}= 5.58,\ 95\%   \text{ CI } [4.91, 6.26],\ t(18357) = 16.12,\ p < .001)$. In the same vein, boys in the U.S.A. also outperformed the girls in Canada by the largest margin $(\text{difference}= 7.59,\ 95\%   \text{ CI } [6.67, 8.51],\ t(18357) = 16.25,\ p < .001)$.
 
 These findings suggest that while gender differences exist, the national level factors may play a more substantial role in the TIMSS math percent score of 4th grade students. Further research should explore some potential national level contributors like curriculum standards.
 
@@ -177,23 +202,23 @@ The dataset used in this contained a total of 18194 participants after data clea
 
 -   **Age:** Age of Teacher (1: Under 25; 2: 25–29; 3: 30–39; 4: 40–49; 5: 50–59; 6: 60 or more)
 
--   **Level_of_Formal_Educ:** Level of formal education teacher has completed (1: Did not complete Upper secondary education—ISCED Level 3; 2: Upper secondary education—ISCED Level 3 (have not completed postsecondary or tertiary education); 3: Post-secondary, non-tertiary education—ISCED Level 4; 4: Short-cycle tertiary education—ISCED Level 5; 5: Bachelor’s or equivalent level—ISCED Level 6; 6: Master’s or equivalent level—ISCED Level 7; 7: Doctor or equivalent level—ISCED Level 8)
+-   **Formal_Educ:** Level of formal education teacher has completed (1: Did not complete Upper secondary education—ISCED Level 3; 2: Upper secondary education—ISCED Level 3 (have not completed postsecondary or tertiary education); 3: Post-secondary, non-tertiary education—ISCED Level 4; 4: Short-cycle tertiary education—ISCED Level 5; 5: Bachelor’s or equivalent level—ISCED Level 6; 6: Master’s or equivalent level—ISCED Level 7; 7: Doctor or equivalent level—ISCED Level 8)
 
 -   **Class_Size:** Number of students in the class.
 
 -   **Homework_Freq:** How often math homework is assigned (1: I do not assign mathematics homework; 2: Less than once a week; 3: 1 or 2 times a week; 4: 3 or 4 times a week; 5: Every day)
 
--   **Tch_Academic_Success:** Scale score from the subscale measuring school emphasis on academic success-teacher.
+-   **Academic_Success:** Scale score from the subscale measuring school emphasis on academic success-teacher.
 
 -   **Safe_Orderly_Schools :** Scale score from the subscale measuring safe and orderly schools-teacher.
 
--   **Tch_Job_Satis :** Scale score from the subscale measuring teachers job satisfaction.
+-   **Job_Satis :** Scale score from the subscale measuring teachers job satisfaction.
 
 -   **Student_not_Ready:** Scale score from the subscale measuring teaching limited by student not ready.
 
--   **Tch_Educ_Math_Major :** Teachers majored in education and mathematics (1: Major in Edu and Math; 2: Major in Edu but not Math; 3: Major in Math but not Edu; 4: All other Majors; 5: No Formal Edu Beyond Upper Secondary).
+-   **TMath_Major :** Teachers majored in education and mathematics (1: Major in Edu and Math; 2: Major in Edu but not Math; 3: Major in Math but not Edu; 4: All other Majors; 5: No Formal Edu Beyond Upper Secondary).
 
--   **Math_Instruction_Hours:** Mathematics instruction hours per week
+-   **Instruction_Hours:** Mathematics instruction hours per week
 
 -   **Math_Percent_Correct**: Students' percent correct on the 2023 TIMSS Math Achievement Test.
 
@@ -211,10 +236,47 @@ As with the `Home_Student` dataset, the data preparation for the `Teacher_Studen
 
 #### Descriptive Statistics
 
-The total sample size of the Canada and U.S.A. 4th grade students was 22806. However, due to non-response, the sample size used for this analysis was 18369; 9351 girls and 9018 boys. There were more Canadian 4th Grade students compared to the U.S.A. in the sample (@fig-Country-by-Sex). The overall mean age was 10 years (S.D. = 0.390) and the average sample class score was 52% (S.D. = 0.390). About 51% of the entire sample was female with Canada accounting for about 52% of the total population of females. A comprehensive summary of the sample information can be seen in @tbl-sample-descriptives. The distribution of the math scores for each country and sex subgroup can be described asbimodal as shown in @fig-dist-of-math-score. As shown in @fig-dist-of-math-score-country-sex-home-support, it can be observed that U.S.A students had a higher Math score average with boys also having a higher average score. Students who had access to both their own rooms and internet access seemed to have a better average score compared to those who had neither (@fig-dist-of-math-score-country-sex-home-support-4).
+The total sample size of the Canada and U.S.A. 4th grade was 26293. However, due to non-response, the sample size used for this analysis was 18194; 15612 females, 2430 males and 152 other. The average math percent score for the 4th grade students were similar for male (M = 50.4, S.D. = 24.4) and female teachers (M = 50.4, S.D. = 24.1) with "other" having a relatively lower average (M = 45.5, S.D. = 23.7) (see @fig-tch-dist-of-math-score-age-sex-educ-4). A majority of the teachers (93.5%) were between 25 - 59 years old with the rest being under 25 years (3.8%) or over 60 years (2.7%). With regards to the level of formal education, 69.1% of the teachers had a bachelor's degree or equivalent followed by those with a master's degree or equivalent at 30.4%. As shown in @fig-tch-age-by-education, only teachers between 30 - 39 years and 50 - 59 years had PhD's or equivalent. @tbl-tch-sample-descriptives provides a comprehensive summary of the descriptive statistics of the sample. As another aim of this analysis is to identify differences in students performance based on a teacher's level of education and age, these variables were further investigated through graphical representations. From @fig-tch-dist-of-math-score-age-sex-educ-1, students who were taught by teachers with at least higher levels of formal education - particularly those with a master's or doctoral degrees- tend to have a slightly higher median score across most of the age groups with the exception of doctoral degree holders between 30 - 39 years. It can also be seen that some subgroups had few to no data points with one subgroup having an outlier. Also, student percentage scores seem relatively consistent across the various teacher age group. Students taught by teachers under 25 years or above 60 years have a slightly higher median score (@fig-tch-dist-of-math-score-age-sex-educ-2). Also, the median scores for the 4th grade students as well as the overall score distribution tend to increase with higher formal education levels (@fig-tch-dist-of-math-score-age-sex-educ-3). This suggests a positive association between teacher qualifications and percent correct. As can be seen in @fig-tch-Correlations, all the predictors have a low positive association with the dependent variable. There are also a few predictors that have a moderate positive relationship with each other. The variance inflation factor will be examined to ensure there is no multicollinearity among the predictors. The lack of a strong association with the dependent variable suggests there may be better factors to explain the variation in math percentage scores.
 
 ```{r}
 #| label: tbl-tch-sample-descriptives
 #| tbl-cap: Sample Descriptive Statistics for Teacher Dataset
 
+tch_tb1
 ```
+
+```{r}
+#| label: fig-tch-age-by-education
+#| fig-cap: Number of Teachers by Age and Education Level
+
+tch_fig1
+```
+
+```{r}
+#| label: fig-tch-dist-of-math-score-age-sex-educ
+#| layout-ncol: 2
+#| layout-nrow: 2
+#| fig-cap: Boxplots of the Students' Scores by Age, Education Level and Sex
+#| fig-subcap:
+#| - "Boxplots of Students' Math Scores by Teachers Age and Education Level"
+#| - "Boxplots of  Students' Math Scores by Age of Teachers "
+#| - "Boxplots of Scores Students' Math Scores by Teacher's Level of Education"
+#| - Boxplots of Students' Math Scores by Sex of Teachers
+#
+
+tch_fig2
+tch_fig3
+tch_fig4
+tch_fig5
+```
+
+```{r}
+#| label: fig-tch-Correlations
+#| fig-cap: Correlation Heatmap for Teacher-Level Analysis
+
+tch_fig6
+```
+
+#### Regression Analysis
+
+A step-wise regression model was estimated to evaluate whether the independent variables *(Country, Sex, Age, Disorderly_Behavior, Instructional_Clarity, Digital_Self_Efficacy, Student_Bullying, Like_Learning_Math, Confident_in_Math, and Number_of_Home_Study_Supports)* could predict the dependent variable, *Math_Percent_Correct* . The linear relationship between independent variables and math score was found to be statistically significant $F(11, 18357) = 439.39,\ p < .001$. Appoximately $21\%$ of the total variation in math percent score was account for by its linear relationship with the predictors, $R^2 = .21,\ R^2_{adj}=.21$. Among the predictors, instructional clarity had a statistically non-significant and negative effect on math percentage value $(\beta = -.16,\ p < .001)$, suggesting that greater instructional clarity was not associated with higher math percent values in this model over and above all other predictors. The effect of Country (U.S.A.) was statistically significant and positive $(\beta = 5.58,\ p < .001)$, suggesting that holding all other predictors unchanged, 4th grade students scored 5.58% higher than those in Canada. The effect of Sex (boy) was also statistically significant and positive $(\beta = 2.01,\ p < .001)$, suggesting that controlling for all other predictors, boys in the 4th grade scored 2.01% higher than girls. Interestingly, Like_Learning_Math was found to have statistically significant and negative effect on math percent score $(\beta = -.97,\ p < .001)$. This suggests that partialling out the effects of all other predictors, and a unit increase in a student whether a student likes learning math results in a -0.97% decrease in math percent score. All other predictors in the model had a statistically significant and positive effect on math percent score. This suggests that holding all other predictirs unchanged, an increase in their respective values is expected lead to an increase in math percentage score. The details of the results from the step-wise analysis are presented in @tbl-Initial-regression-for-student-data. The predictor Confident_in_Math had the largest effect on the math percent score followed by Number_of_Home_Study_Supports_Either @tbl-Initial-regression-for-student-data-4. The predictors used in this analysis do not exhibit multicollinearity as shown in @tbl-Initial-regression-for-student-data-3. A look at the residual plots in @fig-residual-std_reg_initial show a slight non-linearity with possible non-normality from the Q-Q plot.
