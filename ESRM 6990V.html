@@ -124,8 +124,7 @@ window.Quarto = {
 </header>
 
 
-<section id="timss-data" class="level1">
-<h1>TIMSS DATA</h1>
+<p>(A Regression-Based Investigation of Student- and Teacher-Level Influences on Math Performance in TIMSS 2023)</p>
 <section id="introduction-research-scenario-and-research-questions" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-research-scenario-and-research-questions">Introduction: Research Scenario and Research Questions</h2>
 <p>I would want to investigate the performance of students in the United States of America (USA) and Canada based on the 2023 <a href="https://timss2023.org/data">TIMSS</a> (Trends in International Mathematics and Science Study) dataset. TIMSS is an international measure of mathematics and science achievements of fourth and eighth grade students. The TIMSS is conducted every <a href="https://www.iea.nl/studies/iea/timss">four years</a> at the fourth and eighth grade levels. In addition to standardized achievement tests in math and science, TIMSS also collects information of school resources, teacher training/characteristics, home background as well as curriculum implementation. A total of 64 countries participated in the 2023 cycle of TIMSS. This analysis focuses on math performance of 4th grade students using their percentage correct on the TIMSS math achievement test. In this study, student level factors, home factors as well as teacher-level factors are explored to identify their respective impacts on an individual student’s math test score. Specifically, this research seeks to answer the following:</p>
@@ -136,7 +135,7 @@ window.Quarto = {
 </ul></li>
 <li>How do various teacher characteristics influence student’s score on the math test?
 <ul>
-<li>Ae they are differences in students’ math percentage scores across levels of age and formal education completed?</li>
+<li>Are they are differences in students’ math percentage scores across levels of age and formal education completed?</li>
 </ul></li>
 </ol>
 <p>This report is organized as follows:</p>
@@ -188,7 +187,7 @@ window.Quarto = {
 </section>
 <section id="descriptive-statistics" class="level4">
 <h4 class="anchored" data-anchor-id="descriptive-statistics">Descriptive Statistics</h4>
-<p>The total sample size of the Canada and U.S.A. 4th grade students was 22806. However, due to non-response, the sample size used for this analysis was 18369; 9351 girls and 9018 boys. There were more Canadian 4th Grade students compared to the U.S.A. in the sample (<a href="#fig-Country-by-Sex" class="quarto-xref">Figure&nbsp;1</a>). The overall mean age was 10 years (S.D. = 0.390) and the average sample class score was 52% (S.D. = 0.390). About 51% of the entire sample was female with Canada accounting for about 52% of the total population of females. A comprehensive summary of the sample information can be seen in <a href="#tbl-sample-descriptives" class="quarto-xref">Table&nbsp;1</a>. The distribution of the math scores for each country and sex subgroup can be described as bi-modal as shown in <a href="#fig-dist-of-math-score" class="quarto-xref">Figure&nbsp;2</a>. As shown in <a href="#fig-dist-of-math-score-country-sex-home-support" class="quarto-xref">Figure&nbsp;3</a>, it can be observed that U.S.A students had a higher Math score average with boys also having a higher average score. Students who had access to both their own rooms and internet access seemed to have a better average score compared to those who had neither (<a href="#fig-dist-of-math-score-country-sex-home-support-4" class="quarto-xref">Figure&nbsp;3 (d)</a>).</p>
+<p>The total sample size of the Canada and U.S.A. 4th grade students was 22806. However, due to non-response, the sample size used for this analysis was 18369; 9351 girls and 9018 boys. There were more Canadian 4th Grade students compared to the U.S.A. in the sample (<a href="#fig-Country-by-Sex" class="quarto-xref">Figure&nbsp;1</a>). The overall mean age was 10 years (S.D. = 0.390) and the average sample class score was 52% (S.D. = 0.390). About 51% of the entire sample was female with Canada accounting for about 52% of the total population of females. A comprehensive summary of the sample information can be seen in <a href="#tbl-sample-descriptives" class="quarto-xref">Table&nbsp;1</a>. The distribution of the math scores for each country and sex subgroup can be described as bi-modal as shown in <a href="#fig-dist-of-math-score" class="quarto-xref">Figure&nbsp;2</a>. As shown in <a href="#fig-dist-of-math-score-country-sex-home-support" class="quarto-xref">Figure&nbsp;3</a>, it can be observed that U.S.A students had a higher Math score average with boys also having a higher average score. Students who had access to both their own rooms and internet access seemed to have a better average score compared to those who had neither (<a href="#fig-dist-of-math-score-country-sex-home-support-4" class="quarto-xref">Figure&nbsp;3 (d)</a>). As shown in <a href="#fig-Correlations" class="quarto-xref">Figure&nbsp;4</a>, the correlations between the predictors and math score were in the moderate to low range.</p>
 <div class="cell">
 <div id="tbl-sample-descriptives" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -536,7 +535,7 @@ Figure&nbsp;4: Correlation Heatmap for Student-Level Analysis
 </section>
 <section id="regression-analysis" class="level4">
 <h4 class="anchored" data-anchor-id="regression-analysis">Regression Analysis</h4>
-<p>A step-wise regression model was estimated to evaluate whether the independent variables <em>(Country, Sex, Age, Disorderly_Behavior, Instructional_Clarity, Digital_Self_Efficacy, Student_Bullying, Like_Learning_Math, Confident_in_Math, and Number_of_Home_Study_Supports)</em> could predict the dependent variable, <em>Math_Percent_Correct</em> . The linear relationship between independent variables and math score was found to be statistically significant <span class="math inline">\(F(11, 18357) = 439.39,\ p &lt; .001\)</span>. As shown in <a href="#fig-Correlations" class="quarto-xref">Figure&nbsp;4</a>, the correlations between the predictors and math score were in the moderate to low range. Appoximately <span class="math inline">\(21\%\)</span> of the total variation in math percent score was account for by its linear relationship with the predictors, <span class="math inline">\(R^2 = .21,\ R^2_{adj}=.21\)</span>. Among the predictors, instructional clarity had a statistically non-significant and negative effect on math percentage value <span class="math inline">\((\beta = -.16,\ p &lt; .001)\)</span>, suggesting that greater instructional clarity was not associated with higher math percent values in this model over and above all other predictors. The effect of Country (U.S.A.) was statistically significant and positive <span class="math inline">\((\beta = 5.58,\ p &lt; .001)\)</span>, suggesting that holding all other predictors unchanged, 4th grade students scored 5.58% higher than those in Canada. The effect of Sex (boy) was also statistically significant and positive <span class="math inline">\((\beta = 2.01,\ p &lt; .001)\)</span>, suggesting that controlling for all other predictors, boys in the 4th grade scored 2.01% higher than girls. Interestingly, Like_Learning_Math was found to have statistically significant and negative effect on math percent score <span class="math inline">\((\beta = -.97,\ p &lt; .001)\)</span>. This suggests that partialling out the effects of all other predictors, and a unit increase in a student whether a student likes learning math results in a -0.97% decrease in math percent score. All other predictors in the model had a statistically significant and positive effect on math percent score. This suggests that holding all other predictirs unchanged, an increase in their respective values is expected lead to an increase in math percentage score. The details of the results from the step-wise analysis are presented in <a href="#tbl-Initial-regression-for-student-data" class="quarto-xref">Table&nbsp;2</a>. The predictor Confident_in_Math had the largest effect on the math percent score followed by Number_of_Home_Study_Supports_Either <a href="#tbl-Initial-regression-for-student-data-4" class="quarto-xref">Table&nbsp;2 (d)</a>. The predictors used in this analysis do not exhibit multicollinearity as shown in <a href="#tbl-Initial-regression-for-student-data-3" class="quarto-xref">Table&nbsp;2 (c)</a>. A look at the residual plots in <a href="#fig-residual-std_reg_initial" class="quarto-xref">Figure&nbsp;5</a> show a slight non-linearity with possible non-normality from the Q-Q plot.</p>
+<p>A step-wise regression model was estimated to evaluate whether the independent variables <em>(Country, Sex, Age, Disorderly_Behavior, Instructional_Clarity, Digital_Self_Efficacy, Student_Bullying, Like_Learning_Math, Confident_in_Math, and Number_of_Home_Study_Supports)</em> could predict the dependent variable, <em>Math_Percent_Correct</em> . The linear relationship between independent variables and math score was found to be statistically significant <span class="math inline">\(F(11, 18357) = 439.39,\ p &lt; .001\)</span>. Appoximately <span class="math inline">\(21\%\)</span> of the total variation in math percent score was account for by its linear relationship with the predictors, <span class="math inline">\(R^2 = .21,\ R^2_{adj}=.21\)</span>. Among the predictors, instructional clarity had a statistically non-significant and negative effect on math percentage value <span class="math inline">\((\beta = -.16,\ p &lt; .001)\)</span>, suggesting that greater instructional clarity was not associated with higher math percent values in this model over and above all other predictors. The effect of Country (U.S.A.) was statistically significant and positive <span class="math inline">\((\beta = 5.58,\ p &lt; .001)\)</span>, suggesting that holding all other predictors unchanged, 4th grade students scored 5.58% higher than those in Canada. The effect of Sex (boy) was also statistically significant and positive <span class="math inline">\((\beta = 2.01,\ p &lt; .001)\)</span>, suggesting that controlling for all other predictors, boys in the 4th grade scored 2.01% higher than girls. Interestingly, Like_Learning_Math was found to have statistically significant and negative effect on math percent score <span class="math inline">\((\beta = -.97,\ p &lt; .001)\)</span>. This suggests that partialling out the effects of all other predictors, and a unit increase in a student whether a student likes learning math results in a -0.97% decrease in math percent score. All other predictors in the model had a statistically significant and positive effect on math percent score. This suggests that holding all other predictirs unchanged, an increase in their respective values is expected lead to an increase in math percentage score. The details of the results from the step-wise analysis are presented in <a href="#tbl-Initial-regression-for-student-data" class="quarto-xref">Table&nbsp;2</a>. The predictor Confident_in_Math had the largest effect on the math percent score followed by Number_of_Home_Study_Supports_Either <a href="#tbl-Initial-regression-for-student-data-4" class="quarto-xref">Table&nbsp;2 (d)</a>. The predictors used in this analysis do not exhibit multicollinearity as shown in <a href="#tbl-Initial-regression-for-student-data-3" class="quarto-xref">Table&nbsp;2 (c)</a>. A look at the residual plots in <a href="#fig-residual-std_reg_initial" class="quarto-xref">Figure&nbsp;5</a> show a slight non-linearity with possible non-normality from the Q-Q plot.</p>
 <div class="cell">
 <div id="tbl-Initial-regression-for-student-data" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1080,15 +1079,15 @@ Figure&nbsp;6: Estimated Marginal Means of Predicted Math Scores by Sex and Coun
 <li><p><strong>Years_Teaching:</strong> Years teacher has been teaching</p></li>
 <li><p><strong>Sex:</strong> Sex/Gender of teacher (1: Female; 2: Male; 3: Other)</p></li>
 <li><p><strong>Age:</strong> Age of Teacher (1: Under 25; 2: 25–29; 3: 30–39; 4: 40–49; 5: 50–59; 6: 60 or more)</p></li>
-<li><p><strong>Level_of_Formal_Educ:</strong> Level of formal education teacher has completed (1: Did not complete Upper secondary education—ISCED Level 3; 2: Upper secondary education—ISCED Level 3 (have not completed postsecondary or tertiary education); 3: Post-secondary, non-tertiary education—ISCED Level 4; 4: Short-cycle tertiary education—ISCED Level 5; 5: Bachelor’s or equivalent level—ISCED Level 6; 6: Master’s or equivalent level—ISCED Level 7; 7: Doctor or equivalent level—ISCED Level 8)</p></li>
+<li><p><strong>Formal_Educ:</strong> Level of formal education teacher has completed (1: Did not complete Upper secondary education—ISCED Level 3; 2: Upper secondary education—ISCED Level 3 (have not completed postsecondary or tertiary education); 3: Post-secondary, non-tertiary education—ISCED Level 4; 4: Short-cycle tertiary education—ISCED Level 5; 5: Bachelor’s or equivalent level—ISCED Level 6; 6: Master’s or equivalent level—ISCED Level 7; 7: Doctor or equivalent level—ISCED Level 8)</p></li>
 <li><p><strong>Class_Size:</strong> Number of students in the class.</p></li>
 <li><p><strong>Homework_Freq:</strong> How often math homework is assigned (1: I do not assign mathematics homework; 2: Less than once a week; 3: 1 or 2 times a week; 4: 3 or 4 times a week; 5: Every day)</p></li>
-<li><p><strong>Tch_Academic_Success:</strong> Scale score from the subscale measuring school emphasis on academic success-teacher.</p></li>
+<li><p><strong>Academic_Success:</strong> Scale score from the subscale measuring school emphasis on academic success-teacher.</p></li>
 <li><p><strong>Safe_Orderly_Schools :</strong> Scale score from the subscale measuring safe and orderly schools-teacher.</p></li>
-<li><p><strong>Tch_Job_Satis :</strong> Scale score from the subscale measuring teachers job satisfaction.</p></li>
+<li><p><strong>Job_Satis :</strong> Scale score from the subscale measuring teachers job satisfaction.</p></li>
 <li><p><strong>Student_not_Ready:</strong> Scale score from the subscale measuring teaching limited by student not ready.</p></li>
-<li><p><strong>Tch_Educ_Math_Major :</strong> Teachers majored in education and mathematics (1: Major in Edu and Math; 2: Major in Edu but not Math; 3: Major in Math but not Edu; 4: All other Majors; 5: No Formal Edu Beyond Upper Secondary).</p></li>
-<li><p><strong>Math_Instruction_Hours:</strong> Mathematics instruction hours per week</p></li>
+<li><p><strong>TMath_Major :</strong> Teachers majored in education and mathematics (1: Major in Edu and Math; 2: Major in Edu but not Math; 3: Major in Math but not Edu; 4: All other Majors; 5: No Formal Edu Beyond Upper Secondary).</p></li>
+<li><p><strong>Instruction_Hours:</strong> Mathematics instruction hours per week</p></li>
 <li><p><strong>Math_Percent_Correct</strong>: Students’ percent correct on the 2023 TIMSS Math Achievement Test.</p></li>
 </ul>
 <p>The scale scores reported were derived following several steps including; item parameter estimation, item fit evaluation among others <span class="citation" data-cites="yin2024">(<a href="#ref-yin2024" role="doc-biblioref">Yin and Reynolds 2024</a>)</span>.</p>
@@ -1098,7 +1097,7 @@ Figure&nbsp;6: Estimated Marginal Means of Predicted Math Scores by Sex and Coun
 </section>
 <section id="descriptive-statistics-1" class="level4">
 <h4 class="anchored" data-anchor-id="descriptive-statistics-1">Descriptive Statistics</h4>
-<p>The total sample size of the Canada and U.S.A. 4th grade was 26293. However, due to non-response, the sample size used for this analysis was 18194; 15612 females, 2430 males and 152 other. The average math percent score for the 4th grade students were similar for male (M = 50.4, S.D. = 24.4) and female teachers (M = 50.4, S.D. = 24.1) with “other” having a relatively lower average (M = 45.5, S.D. = 23.7). A majority of the teachers (93.5%) were between 25 - 59 years old with the rest being under 25 years (3.8%) or over 60 years (2.7%). With regards to the level of formal education, 69.1% of the teachers had a bachelor’s degree or equivalent followed by those with a master’s degree or equivalent at 30.4%. As shown in <a href="#fig-age-by-education" class="quarto-xref">Figure&nbsp;7</a>, only teachers between 30 - 39 years and 50 - 59 years had PhD’s or equivalent. <a href="#tbl-tch-sample-descriptives" class="quarto-xref">Table&nbsp;4</a> provides a comprehensive summary of the descriptive statistics of the sample.</p>
+<p>The total sample size of the Canada and U.S.A. 4th grade was 26293. However, due to non-response, the sample size used for this analysis was 18194; 15612 females, 2430 males and 152 other. The average math percent score for the 4th grade students were similar for male (M = 50.4, S.D. = 24.4) and female teachers (M = 50.4, S.D. = 24.1) with “other” having a relatively lower average (M = 45.5, S.D. = 23.7) (see <a href="#fig-tch-dist-of-math-score-age-sex-educ-4" class="quarto-xref">Figure&nbsp;8 (d)</a>). A majority of the teachers (93.5%) were between 25 - 59 years old with the rest being under 25 years (3.8%) or over 60 years (2.7%). With regards to the level of formal education, 69.1% of the teachers had a bachelor’s degree or equivalent followed by those with a master’s degree or equivalent at 30.4%. As shown in <a href="#fig-tch-age-by-education" class="quarto-xref">Figure&nbsp;7</a>, only teachers between 30 - 39 years and 50 - 59 years had PhD’s or equivalent. <a href="#tbl-tch-sample-descriptives" class="quarto-xref">Table&nbsp;4</a> provides a comprehensive summary of the descriptive statistics of the sample. As another aim of this analysis is to identify differences in students performance based on a teacher’s level of education and age, these variables were further investigated through graphical representations. From <a href="#fig-tch-dist-of-math-score-age-sex-educ-1" class="quarto-xref">Figure&nbsp;8 (a)</a>, students who were taught by teachers with at least higher levels of formal education - particularly those with a master’s or doctoral degrees- tend to have a slightly higher median score across most of the age groups with the exception of doctoral degree holders between 30 - 39 years. It can also be seen that some subgroups had few to no data points with one subgroup having an outlier. Also, student percentage scores seem relatively consistent across the various teacher age group. Students taught by teachers under 25 years or above 60 years have a slightly higher median score (<a href="#fig-tch-dist-of-math-score-age-sex-educ-2" class="quarto-xref">Figure&nbsp;8 (b)</a>). Also, the median scores for the 4th grade students as well as the overall score distribution tend to increase with higher formal education levels (<a href="#fig-tch-dist-of-math-score-age-sex-educ-3" class="quarto-xref">Figure&nbsp;8 (c)</a>). This suggests a positive association between teacher qualifications and percent correct. As can be seen in <a href="#fig-tch-Correlations" class="quarto-xref">Figure&nbsp;9</a>, all the predictors have a low positive association with the dependent variable. There are also a few predictors that have a moderate positive relationship with each other. The variance inflation factor will be examined to ensure there is no multicollinearity among the predictors. The lack of a strong association with the dependent variable suggests there may be better factors to explain the variation in math percentage scores.</p>
 <div class="cell">
 <div id="tbl-tch-sample-descriptives" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1484,41 +1483,41 @@ Table&nbsp;4: Sample Descriptive Statistics for Teacher Dataset
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-age-by-education" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-tch-age-by-education" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-age-by-education-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="ESRM-6990V_files/figure-html/fig-age-by-education-1.png" class="img-fluid figure-img" width="672">
+<div aria-describedby="fig-tch-age-by-education-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ESRM-6990V_files/figure-html/fig-tch-age-by-education-1.png" class="img-fluid figure-img" width="672">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-age-by-education-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tch-age-by-education-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7: Number of Teachers by Age and Education Level
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<div id="fig-dist-of-math-score-country-sex-home" class="quarto-layout-panel">
+<div id="fig-tch-dist-of-math-score-age-sex-educ" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-dist-of-math-score-country-sex-home-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="fig-tch-dist-of-math-score-age-sex-educ-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-dist-of-math-score-country-sex-home" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-dist-of-math-score-country-sex-home-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-tch-dist-of-math-score-age-sex-educ" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-tch-dist-of-math-score-age-sex-educ-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-dist-of-math-score-country-sex-home-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="ESRM-6990V_files/figure-html/fig-dist-of-math-score-country-sex-home-1.png" class="img-fluid figure-img" data-ref-parent="fig-dist-of-math-score-country-sex-home" width="672">
+<div aria-describedby="fig-tch-dist-of-math-score-age-sex-educ-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ESRM-6990V_files/figure-html/fig-tch-dist-of-math-score-age-sex-educ-1.png" class="img-fluid figure-img" data-ref-parent="fig-tch-dist-of-math-score-age-sex-educ" width="672">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-dist-of-math-score-country-sex-home-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-tch-dist-of-math-score-age-sex-educ-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a) Boxplots of Students’ Math Scores by Teachers Age and Education Level
 </figcaption>
 </figure>
 </div>
 </div>
-<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-dist-of-math-score-country-sex-home" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-dist-of-math-score-country-sex-home-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-tch-dist-of-math-score-age-sex-educ" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-tch-dist-of-math-score-age-sex-educ-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-dist-of-math-score-country-sex-home-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="ESRM-6990V_files/figure-html/fig-dist-of-math-score-country-sex-home-2.png" class="img-fluid figure-img" data-ref-parent="fig-dist-of-math-score-country-sex-home" width="672">
+<div aria-describedby="fig-tch-dist-of-math-score-age-sex-educ-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ESRM-6990V_files/figure-html/fig-tch-dist-of-math-score-age-sex-educ-2.png" class="img-fluid figure-img" data-ref-parent="fig-tch-dist-of-math-score-age-sex-educ" width="672">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-dist-of-math-score-country-sex-home-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-tch-dist-of-math-score-age-sex-educ-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b) Boxplots of Students’ Math Scores by Age of Teachers
 </figcaption>
 </figure>
@@ -1526,25 +1525,25 @@ Figure&nbsp;7: Number of Teachers by Age and Education Level
 </div>
 </div>
 <div class="quarto-layout-row">
-<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-dist-of-math-score-country-sex-home" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-dist-of-math-score-country-sex-home-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-tch-dist-of-math-score-age-sex-educ" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-tch-dist-of-math-score-age-sex-educ-3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-dist-of-math-score-country-sex-home-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="ESRM-6990V_files/figure-html/fig-dist-of-math-score-country-sex-home-3.png" class="img-fluid figure-img" data-ref-parent="fig-dist-of-math-score-country-sex-home" width="672">
+<div aria-describedby="fig-tch-dist-of-math-score-age-sex-educ-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ESRM-6990V_files/figure-html/fig-tch-dist-of-math-score-age-sex-educ-3.png" class="img-fluid figure-img" data-ref-parent="fig-tch-dist-of-math-score-age-sex-educ" width="672">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-dist-of-math-score-country-sex-home-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-tch-dist-of-math-score-age-sex-educ-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (c) Boxplots of Scores Students’ Math Scores by Teacher’s Level of Education
 </figcaption>
 </figure>
 </div>
 </div>
-<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-dist-of-math-score-country-sex-home" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-dist-of-math-score-country-sex-home-4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-tch-dist-of-math-score-age-sex-educ" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-tch-dist-of-math-score-age-sex-educ-4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-dist-of-math-score-country-sex-home-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="ESRM-6990V_files/figure-html/fig-dist-of-math-score-country-sex-home-4.png" class="img-fluid figure-img" data-ref-parent="fig-dist-of-math-score-country-sex-home" width="672">
+<div aria-describedby="fig-tch-dist-of-math-score-age-sex-educ-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ESRM-6990V_files/figure-html/fig-tch-dist-of-math-score-age-sex-educ-4.png" class="img-fluid figure-img" data-ref-parent="fig-tch-dist-of-math-score-age-sex-educ" width="672">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-dist-of-math-score-country-sex-home-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-tch-dist-of-math-score-age-sex-educ-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (d) Boxplots of Students’ Math Scores by Sex of Teachers
 </figcaption>
 </figure>
@@ -1552,13 +1551,30 @@ Figure&nbsp;7: Number of Teachers by Age and Education Level
 </div>
 </div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dist-of-math-score-country-sex-home-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: Boxplots of the the Distribution of Scores by Country, Sex and Home Support
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tch-dist-of-math-score-age-sex-educ-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Boxplots of the Students’ Scores by Age, Education Level and Sex
 </figcaption>
 </figure>
 </div>
-
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-tch-Correlations" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tch-Correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ESRM-6990V_files/figure-html/fig-tch-Correlations-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tch-Correlations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Correlation Heatmap for Teacher-Level Analysis
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
+<section id="regression-analysis-1" class="level4">
+<h4 class="anchored" data-anchor-id="regression-analysis-1">Regression Analysis</h4>
+<p>A step-wise regression model was estimated to evaluate whether the independent variables <em>(Country, Sex, Age, Disorderly_Behavior, Instructional_Clarity, Digital_Self_Efficacy, Student_Bullying, Like_Learning_Math, Confident_in_Math, and Number_of_Home_Study_Supports)</em> could predict the dependent variable, <em>Math_Percent_Correct</em> . The linear relationship between independent variables and math score was found to be statistically significant <span class="math inline">\(F(11, 18357) = 439.39,\ p &lt; .001\)</span>. Appoximately <span class="math inline">\(21\%\)</span> of the total variation in math percent score was account for by its linear relationship with the predictors, <span class="math inline">\(R^2 = .21,\ R^2_{adj}=.21\)</span>. Among the predictors, instructional clarity had a statistically non-significant and negative effect on math percentage value <span class="math inline">\((\beta = -.16,\ p &lt; .001)\)</span>, suggesting that greater instructional clarity was not associated with higher math percent values in this model over and above all other predictors. The effect of Country (U.S.A.) was statistically significant and positive <span class="math inline">\((\beta = 5.58,\ p &lt; .001)\)</span>, suggesting that holding all other predictors unchanged, 4th grade students scored 5.58% higher than those in Canada. The effect of Sex (boy) was also statistically significant and positive <span class="math inline">\((\beta = 2.01,\ p &lt; .001)\)</span>, suggesting that controlling for all other predictors, boys in the 4th grade scored 2.01% higher than girls. Interestingly, Like_Learning_Math was found to have statistically significant and negative effect on math percent score <span class="math inline">\((\beta = -.97,\ p &lt; .001)\)</span>. This suggests that partialling out the effects of all other predictors, and a unit increase in a student whether a student likes learning math results in a -0.97% decrease in math percent score. All other predictors in the model had a statistically significant and positive effect on math percent score. This suggests that holding all other predictirs unchanged, an increase in their respective values is expected lead to an increase in math percentage score. The details of the results from the step-wise analysis are presented in <a href="#tbl-Initial-regression-for-student-data" class="quarto-xref">Table&nbsp;2</a>. The predictor Confident_in_Math had the largest effect on the math percent score followed by Number_of_Home_Study_Supports_Either <a href="#tbl-Initial-regression-for-student-data-4" class="quarto-xref">Table&nbsp;2 (d)</a>. The predictors used in this analysis do not exhibit multicollinearity as shown in <a href="#tbl-Initial-regression-for-student-data-3" class="quarto-xref">Table&nbsp;2 (c)</a>. A look at the residual plots in <a href="#fig-residual-std_reg_initial" class="quarto-xref">Figure&nbsp;5</a> show a slight non-linearity with possible non-normality from the Q-Q plot.</p>
+
 </section>
 </section>
 </section>
