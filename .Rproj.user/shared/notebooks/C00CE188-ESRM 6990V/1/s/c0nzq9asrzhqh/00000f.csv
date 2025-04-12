@@ -1,6 +1,0 @@
-"0","#| label: Country-Sex-Count"
-"0","## Table for Count of Various Categorical Predictors"
-"0","Student_Table_Sex_Age <- Final_Home_Student |> "
-"0","  pivot_longer(cols = c(Country, Sex), "
-"0","           names_to = ""Variable"", values_to = ""Value"") |> count(Variable, Value) |>            group_by(Variable) |> mutate(Proportion = n/sum(n) * 100)"
-"0","kable(Student_Table_Sex_Age, caption = ""Sample Information for Sex and Country"")"

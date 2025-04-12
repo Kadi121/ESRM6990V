@@ -1,5 +1,0 @@
-"0","#| label: fig-Country-by-Sex"
-"0","#| fig-cap: Sample Information for Ordered Variables"
-"0",""
-"0","## Plot for Count or Proportion of Various Categorical Predictors (stack vs dodge)"
-"0"," ggplot(Student_Sex_by_country, aes(x = Country, y = Proportion, fill = Sex)) + geom_bar(stat = ""identity"", position = ""dodge"") +  labs(x = ""Country"", y = ""Proportion(%)"", title = ""Proportion of Students by Country and Sex"") + scale_fill_brewer(palette = ""Blues"", name = ""Level"") + theme_bw() "

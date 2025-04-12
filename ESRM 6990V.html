@@ -778,46 +778,50 @@ Table&nbsp;2: Student-Level Regression Analysis
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">Intercept</td>
+<td style="text-align: right;">-0.194</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Country_USA</td>
 <td style="text-align: right;">0.117</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Sex_Boy</td>
 <td style="text-align: right;">0.042</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Age</td>
 <td style="text-align: right;">0.018</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Disorderly_Behavior</td>
 <td style="text-align: right;">0.042</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Instructional_Clarity</td>
 <td style="text-align: right;">-0.013</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Digital_Self_Efficacy</td>
 <td style="text-align: right;">0.084</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Student_Bullying</td>
 <td style="text-align: right;">0.077</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Like_Learning_Math</td>
 <td style="text-align: right;">-0.081</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Confident_in_Math</td>
 <td style="text-align: right;">0.409</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Number_of_Home_Study_Supports_Either</td>
 <td style="text-align: right;">0.168</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Number_of_Home_Study_Supports_Both</td>
 <td style="text-align: right;">0.211</td>
 </tr>
@@ -847,8 +851,8 @@ Figure&nbsp;5
 </div>
 </div>
 </div>
-<section id="sexcountry" class="level5">
-<h5 class="anchored" data-anchor-id="sexcountry">Sex/Country</h5>
+<section id="difference-in-difference-analysis-on-combinations-of-sex-and-country" class="level5">
+<h5 class="anchored" data-anchor-id="difference-in-difference-analysis-on-combinations-of-sex-and-country">Difference-in-Difference Analysis on Combinations of Sex and Country</h5>
 <p>This section of the analysis focuses on whether there are sex and/or country specific differences in the performance of the 4th grade students on the TIMSS math test. To do this, a differences-in-differences analysis was performed on various combinations of the country and sex variables. From <a href="#tbl-Differences-in-Differences-tables" class="quarto-xref">Table&nbsp;3</a> and <a href="#fig-Differences-in-Differences-fiqures" class="quarto-xref">Figure&nbsp;6</a>, it can be observed that holding all other predictors unchanged, the predicted average math percent value for a typical 4th grade student in the U.S.A is higher than in Canada. Also, a typical Canadian or U.S.A 4th grade boy seem to have a higher predicted average math percent score than their girl counterparts. A marginal contrast analysis (<a href="#tbl-Differences-in-Differences-tables-1" class="quarto-xref">Table&nbsp;3 (a)</a>) was further performed to evaluate if these differences were statistically significant. This analysis revealed that the differences in predicted scores across all combinations of sex and country were statistically significant. In the U.S.A, boys had significantly higher predicted math scores than girls <span class="math inline">\((\text{difference}= 2.01,\ 95\%  \text{ CI } [1.38, 2.63],\ t(18357) = 6.28,\ p &lt; .001)\)</span>. Boys in Canada also had a significantly higher predicted math scores than girls<span class="math inline">\((\text{difference}= 2.01,\ 95\%  \text{ CI } [1.38, 2.63],\ t(18357) = 6.28,\ p &lt; .001)\)</span>. When comparing the average predicted scores of girls in the U.S.A. to those in Canada, the girls in the U.S.A had a significantly higher score <span class="math inline">\((\text{difference}= 5.58,\ 95\%   \text{ CI } [4.91, 6.26],\ t(18357) = 16.12,\ p &lt; .001)\)</span>. Similarly, girls in the U.S.A. also outperformed the boys in Canada <span class="math inline">\((\text{difference}= -3.58,\ 95\%   \text{ CI } [–4.51, –2.65],\ t(18357) = -7.53,\ p &lt; .001)\)</span>. Additionally, boys in the U.S.A scored significantly higher than the boys in Canada <span class="math inline">\((\text{difference}= 5.58,\ 95\%   \text{ CI } [4.91, 6.26],\ t(18357) = 16.12,\ p &lt; .001)\)</span>. In the same vein, boys in the U.S.A. also outperformed the girls in Canada by the largest margin <span class="math inline">\((\text{difference}= 7.59,\ 95\%   \text{ CI } [6.67, 8.51],\ t(18357) = 16.25,\ p &lt; .001)\)</span>.</p>
 <p>These findings suggest that while gender differences exist, the national level factors may play a more substantial role in the TIMSS math percent score of 4th grade students. Further research should explore some potential national level contributors like curriculum standards.</p>
 <div class="cell">
@@ -1071,246 +1075,17 @@ Figure&nbsp;6: Estimated Marginal Means of Predicted Math Scores by Sex and Coun
 <section id="descriptive-statistics-1" class="level4">
 <h4 class="anchored" data-anchor-id="descriptive-statistics-1">Descriptive Statistics</h4>
 <p>The total sample size of the Canada and U.S.A. 4th grade students was 22806. However, due to non-response, the sample size used for this analysis was 18369; 9351 girls and 9018 boys. There were more Canadian 4th Grade students compared to the U.S.A. in the sample (<a href="#fig-Country-by-Sex" class="quarto-xref">Figure&nbsp;1</a>). The overall mean age was 10 years (S.D. = 0.390) and the average sample class score was 52% (S.D. = 0.390). About 51% of the entire sample was female with Canada accounting for about 52% of the total population of females. A comprehensive summary of the sample information can be seen in <a href="#tbl-sample-descriptives" class="quarto-xref">Table&nbsp;1</a>. The distribution of the math scores for each country and sex subgroup can be described asbimodal as shown in <a href="#fig-dist-of-math-score" class="quarto-xref">Figure&nbsp;2</a>. As shown in <a href="#fig-dist-of-math-score-country-sex-home-support" class="quarto-xref">Figure&nbsp;3</a>, it can be observed that U.S.A students had a higher Math score average with boys also having a higher average score. Students who had access to both their own rooms and internet access seemed to have a better average score compared to those who had neither (<a href="#fig-dist-of-math-score-country-sex-home-support-4" class="quarto-xref">Figure&nbsp;3 (d)</a>).</p>
-<div class="cell">
 <div id="tbl-tch-sample-descriptives" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tch-sample-descriptives-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;4: Sample Descriptive Statistics for Teacher Dataset
 </figcaption>
 <div aria-describedby="tbl-tch-sample-descriptives-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-<div class="Rtable1">
-<table class="Rtable1 do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th class="rowlabel firstrow lastrow" data-quarto-table-cell-role="th"></th>
-<th class="firstrow lastrow" data-quarto-table-cell-role="th"><span class="stratlabel">CAN<br>
-<span class="stratn">(N=10616)</span></span></th>
-<th class="firstrow lastrow" data-quarto-table-cell-role="th"><span class="stratlabel">USA<br>
-<span class="stratn">(N=7753)</span></span></th>
-<th class="firstrow lastrow" data-quarto-table-cell-role="th"><span class="stratlabel">Overall<br>
-<span class="stratn">(N=18369)</span></span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td class="rowlabel firstrow">Mathematics Percent Correct Points Scored</td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-</tr>
-<tr class="even">
-<td class="rowlabel">Mean (SD)</td>
-<td>49.8 (22.9)</td>
-<td>55.0 (24.9)</td>
-<td>52.0 (23.9)</td>
-</tr>
-<tr class="odd">
-<td class="rowlabel lastrow">Median [Min, Max]</td>
-<td class="lastrow">50.0 [0, 100]</td>
-<td class="lastrow">56.5 [0, 100]</td>
-<td class="lastrow">52.0 [0, 100]</td>
-</tr>
-<tr class="even">
-<td class="rowlabel firstrow">Students Age</td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-</tr>
-<tr class="odd">
-<td class="rowlabel">Mean (SD)</td>
-<td>9.91 (0.342)</td>
-<td>10.2 (0.383)</td>
-<td>10.0 (0.390)</td>
-</tr>
-<tr class="even">
-<td class="rowlabel lastrow">Median [Min, Max]</td>
-<td class="lastrow">9.92 [6.42, 11.8]</td>
-<td class="lastrow">10.2 [8.58, 12.4]</td>
-<td class="lastrow">10.0 [6.42, 12.4]</td>
-</tr>
-<tr class="odd">
-<td class="rowlabel firstrow">Sex</td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-</tr>
-<tr class="even">
-<td class="rowlabel">Girl</td>
-<td>5491 (51.7%)</td>
-<td>3860 (49.8%)</td>
-<td>9351 (50.9%)</td>
-</tr>
-<tr class="odd">
-<td class="rowlabel lastrow">Boy</td>
-<td class="lastrow">5125 (48.3%)</td>
-<td class="lastrow">3893 (50.2%)</td>
-<td class="lastrow">9018 (49.1%)</td>
-</tr>
-<tr class="even">
-<td class="rowlabel firstrow">Disorderly Behavior during Math Lessons/SCL</td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-</tr>
-<tr class="odd">
-<td class="rowlabel">Mean (SD)</td>
-<td>9.63 (1.60)</td>
-<td>9.54 (1.74)</td>
-<td>9.59 (1.66)</td>
-</tr>
-<tr class="even">
-<td class="rowlabel lastrow">Median [Min, Max]</td>
-<td class="lastrow">9.67 [6.16, 14.8]</td>
-<td class="lastrow">9.67 [6.16, 14.8]</td>
-<td class="lastrow">9.67 [6.16, 14.8]</td>
-</tr>
-<tr class="odd">
-<td class="rowlabel firstrow">Student Bullying/SCL</td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-</tr>
-<tr class="even">
-<td class="rowlabel">Mean (SD)</td>
-<td>9.76 (1.72)</td>
-<td>9.90 (1.88)</td>
-<td>9.82 (1.79)</td>
-</tr>
-<tr class="odd">
-<td class="rowlabel lastrow">Median [Min, Max]</td>
-<td class="lastrow">9.50 [3.81, 12.8]</td>
-<td class="lastrow">9.71 [3.81, 12.8]</td>
-<td class="lastrow">9.71 [3.81, 12.8]</td>
-</tr>
-<tr class="even">
-<td class="rowlabel firstrow">Instructional Clarity in Mathematics Lessons/SCL</td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-</tr>
-<tr class="odd">
-<td class="rowlabel">Mean (SD)</td>
-<td>10.1 (1.86)</td>
-<td>9.95 (1.97)</td>
-<td>10.0 (1.91)</td>
-</tr>
-<tr class="even">
-<td class="rowlabel lastrow">Median [Min, Max]</td>
-<td class="lastrow">10.6 [2.46, 12.1]</td>
-<td class="lastrow">9.79 [2.46, 12.1]</td>
-<td class="lastrow">9.79 [2.46, 12.1]</td>
-</tr>
-<tr class="odd">
-<td class="rowlabel firstrow">Digital Self-Efficacy/SCL</td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-</tr>
-<tr class="even">
-<td class="rowlabel">Mean (SD)</td>
-<td>10.4 (1.91)</td>
-<td>10.1 (1.88)</td>
-<td>10.2 (1.91)</td>
-</tr>
-<tr class="odd">
-<td class="rowlabel lastrow">Median [Min, Max]</td>
-<td class="lastrow">10.1 [3.27, 14.0]</td>
-<td class="lastrow">9.68 [3.27, 14.0]</td>
-<td class="lastrow">10.1 [3.27, 14.0]</td>
-</tr>
-<tr class="even">
-<td class="rowlabel firstrow">Students Sense of School Belonging/SCL</td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-</tr>
-<tr class="odd">
-<td class="rowlabel">Mean (SD)</td>
-<td>9.93 (1.96)</td>
-<td>9.65 (1.91)</td>
-<td>9.81 (1.95)</td>
-</tr>
-<tr class="even">
-<td class="rowlabel lastrow">Median [Min, Max]</td>
-<td class="lastrow">9.68 [3.61, 12.9]</td>
-<td class="lastrow">9.68 [3.61, 12.9]</td>
-<td class="lastrow">9.68 [3.61, 12.9]</td>
-</tr>
-<tr class="odd">
-<td class="rowlabel firstrow">Students Like Learning Mathematics/SCL</td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-</tr>
-<tr class="even">
-<td class="rowlabel">Mean (SD)</td>
-<td>9.90 (1.95)</td>
-<td>9.86 (2.06)</td>
-<td>9.88 (2.00)</td>
-</tr>
-<tr class="odd">
-<td class="rowlabel lastrow">Median [Min, Max]</td>
-<td class="lastrow">9.76 [4.93, 12.6]</td>
-<td class="lastrow">9.76 [4.93, 12.6]</td>
-<td class="lastrow">9.76 [4.93, 12.6]</td>
-</tr>
-<tr class="even">
-<td class="rowlabel firstrow">Students Confident in Mathematics/SCL</td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-</tr>
-<tr class="odd">
-<td class="rowlabel">Mean (SD)</td>
-<td>10.2 (2.00)</td>
-<td>10.1 (2.12)</td>
-<td>10.1 (2.05)</td>
-</tr>
-<tr class="even">
-<td class="rowlabel lastrow">Median [Min, Max]</td>
-<td class="lastrow">9.81 [3.70, 14.2]</td>
-<td class="lastrow">9.80 [3.70, 14.2]</td>
-<td class="lastrow">9.81 [3.70, 14.2]</td>
-</tr>
-<tr class="odd">
-<td class="rowlabel firstrow">Number_of_Home_Study_Supports</td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-<td class="firstrow"></td>
-</tr>
-<tr class="even">
-<td class="rowlabel">Neither Own Room nor Access to the Internet</td>
-<td>284 (2.7%)</td>
-<td>232 (3.0%)</td>
-<td>516 (2.8%)</td>
-</tr>
-<tr class="odd">
-<td class="rowlabel">Either Own Room or Access to the Internet</td>
-<td>2617 (24.7%)</td>
-<td>2287 (29.5%)</td>
-<td>4904 (26.7%)</td>
-</tr>
-<tr class="even">
-<td class="rowlabel lastrow">Both Own Room and Access to the Internet</td>
-<td class="lastrow">7715 (72.7%)</td>
-<td class="lastrow">5234 (67.5%)</td>
-<td class="lastrow">12949 (70.5%)</td>
-</tr>
-</tbody>
-</table>
+<div>
 
 </div>
 </div>
-</div>
 </figure>
-</div>
 </div>
 
 </section>

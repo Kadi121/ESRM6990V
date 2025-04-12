@@ -1,7 +1,0 @@
-"0",""
-"0","## Visualizing Math Scores by Sex"
-"0","ggplot(Final_Home_Student, aes(x = Sex, y = Math_Percent_Correct, fill = Sex)) +"
-"0","  geom_boxplot() +"
-"0","  labs(title = ""Math Scores by Sex"", x = ""Sex"", y = ""Math Score (%)"") +"
-"0","  scale_fill_manual(breaks = Final_Home_Student$Sex,"
-"0","                    values = c (""#BCE4D8"", ""#2D5E88""))+ theme_bw()"
