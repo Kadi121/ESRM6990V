@@ -1,0 +1,6 @@
+"0",""
+"0","## Visualizing Math Scores by COuntry and Sex"
+"0","ggplot(Final_Home_Student, aes(x = Country, y = Math_Percent_Correct, fill = Sex)) +"
+"0","  geom_boxplot() +"
+"0","  labs(title = ""Math Scores by Country and Sex"", x = ""Country"", y = ""Math Score (%)"") +"
+"0","  scale_fill_brewer(""blues"")+ theme_bw()"

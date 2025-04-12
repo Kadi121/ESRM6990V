@@ -1,0 +1,2 @@
+"0","Student_Sex_by_country <- Final_Home_Student |> group_by(Country, Sex) |> summarize(Count = n(), Proportion = (n() / nrow(Final_Home_Student)) * 100)"
+"2","`summarise()` has grouped output by 'Country'. You can override using the `.groups` argument."

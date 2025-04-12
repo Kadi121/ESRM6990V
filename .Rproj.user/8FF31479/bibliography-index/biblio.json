@@ -1,0 +1,30 @@
+{
+    "sources": [
+        {
+            "DOI": "10.6017/lse.tpisc.timss.rs2550",
+            "URL": "https://timss2023.org/methods/chapter-15",
+            "author": [
+                {
+                    "family": "Yin",
+                    "given": "Liqun"
+                },
+                {
+                    "family": "Reynolds",
+                    "given": "Katherine"
+                }
+            ],
+            "id": "yin2024",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "note": "DOI: 10.6017/lse.tpisc.timss.rs2550",
+            "title": "Creating and interpreting the TIMSS context questionnaire scales",
+            "type": "report"
+        }
+    ],
+    "project_biblios": []
+}

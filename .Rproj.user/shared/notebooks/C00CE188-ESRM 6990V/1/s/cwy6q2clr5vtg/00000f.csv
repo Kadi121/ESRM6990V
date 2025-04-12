@@ -1,0 +1,5 @@
+"0","#| label: tbl-sample-descriptives"
+"0","#| tbl-cap: Sample Descriptive Statistics"
+"0","## Sample Descriptive Statistics"
+"0",""
+"0","table1(~ Math_Percent_Correct + Age + Sex + Disorderly_Behavior + Student_Bullying +  Instructional_Clarity + Digital_Self_Efficacy + Sense_of_School_Belonging + Like_Learning_Math + Confident_in_Math + Number_of_Home_Study_Supports | Country, data = Final_Home_Student)"

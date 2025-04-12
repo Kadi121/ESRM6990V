@@ -1,0 +1,53 @@
+{
+    "entries": [
+        {
+            "file": "ESRM 6990V.qmd",
+            "type": "tbl",
+            "id": "sample-descriptives",
+            "suffix": "",
+            "title": "Sample Descriptive Statistics"
+        },
+        {
+            "file": "ESRM 6990V.qmd",
+            "type": "fig",
+            "id": "residual-std_reg_initial",
+            "suffix": "",
+            "title": "Residual Plots for the First Regression Model"
+        },
+        {
+            "file": "ESRM 6990V.qmd",
+            "type": "fig",
+            "id": "Correlations",
+            "suffix": "",
+            "title": "Correlation Heatmap for Student-Level Analysis"
+        },
+        {
+            "file": "ESRM 6990V.qmd",
+            "type": "fig",
+            "id": "dist-of-math-score",
+            "suffix": "",
+            "title": "Boxplot of the Distribution of Math Scores"
+        },
+        {
+            "file": "ESRM 6990V.qmd",
+            "type": "fig",
+            "id": "dist-of-math-score-country-sex-home-support",
+            "suffix": "",
+            "title": "Boxplots of the the Distribution of Scores by Country, Sex and Home Support"
+        },
+        {
+            "file": "ESRM 6990V.qmd",
+            "type": "fig",
+            "id": "Country-by-Sex",
+            "suffix": "",
+            "title": "Number of sudents by Country and Sex"
+        },
+        {
+            "file": "ESRM 6990V.qmd",
+            "type": "tbl",
+            "id": "Initial-regression-for-student-data",
+            "suffix": "",
+            "title": "Student-Level Regression Analysis"
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+"0","library(regclass)
+"
+"2","Warning: package ‘regclass’ was built under R version 4.4.3"
+"2","Loading required package: bestglm
+"
+"2","Warning: package ‘bestglm’ was built under R version 4.4.3"
+"2","Loading required package: leaps
+"
+"2","Warning: package ‘leaps’ was built under R version 4.4.3"
+"2","Loading required package: VGAM
+"
+"2","Warning: package ‘VGAM’ was built under R version 4.4.3"
+"2","Loading required package: stats4
+"
+"2","Loading required package: splines
+"
+"2","
+Attaching package: ‘VGAM’
+
+"
+"2","The following objects are masked from ‘package:psych’:
+
+    fisherz, logistic, logit
+
+"
+"2","Loading required package: rpart
+"
+"2","Loading required package: randomForest
+"
+"2","Warning: package ‘randomForest’ was built under R version 4.4.3"
+"2","randomForest 4.7-1.2
+"
+"2","Type rfNews() to see new features/changes/bug fixes.
+"
+"2","
+Attaching package: ‘randomForest’
+
+"
+"2","The following object is masked from ‘package:psych’:
+
+    outlier
+
+"
+"2","The following object is masked from ‘package:dplyr’:
+
+    combine
+
+"
+"2","The following object is masked from ‘package:ggplot2’:
+
+    margin
+
+"
+"2","Important regclass change from 1.3:
+All functions that had a . in the name now have an _
+all.correlations -> all_correlations, cor.demo -> cor_demo, etc.
+
+"

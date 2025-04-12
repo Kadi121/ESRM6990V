@@ -1,0 +1,6 @@
+"0","#| label: fig-residual-std_reg_initial"
+"0","#| tbl-cap: Residual Plots for the First Regression Model"
+"0",""
+"0","par(mfrow=c(2, 2)) # Set the plot window to display a 2x2 matrix of plots. "
+"0","plot(std_stepwise)"
+"0",""
