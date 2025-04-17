@@ -141,7 +141,9 @@ Fig7
 
 #### Regression Analysis
 
-A step-wise regression model was estimated to evaluate whether the independent variables *(Country, Sex, Age, Disorderly_Behavior, Instructional_Clarity, Digital_Self_Efficacy, Student_Bullying, Like_Learning_Math, Confident_in_Math, and Number_of_Home_Study_Supports)* could predict the dependent variable, *Math_Percent_Correct* . The linear relationship between independent variables and math score was found to be statistically significant $F(11, 18357) = 439.39,\ p < .001$. Appoximately $21\%$ of the total variation in math percent score was account for by its linear relationship with the predictors, $R^2 = .21,\ R^2_{adj}=.21$. Among the predictors, instructional clarity had a statistically non-significant and negative effect on math percentage value $(\beta = -.16,\ p < .001)$, suggesting that greater instructional clarity was not associated with higher math percent values in this model over and above all other predictors. The effect of Country (U.S.A.) was statistically significant and positive $(\beta = 5.58,\ p < .001)$, suggesting that holding all other predictors unchanged, 4th grade students scored 5.58% higher than those in Canada. The effect of Sex (boy) was also statistically significant and positive $(\beta = 2.01,\ p < .001)$, suggesting that controlling for all other predictors, boys in the 4th grade scored 2.01% higher than girls. Interestingly, Like_Learning_Math was found to have statistically significant and negative effect on math percent score $(\beta = -.97,\ p < .001)$. This suggests that partialling out the effects of all other predictors, and a unit increase in a student whether a student likes learning math results in a -0.97% decrease in math percent score. All other predictors in the model had a statistically significant and positive effect on math percent score. This suggests that holding all other predictirs unchanged, an increase in their respective values is expected lead to an increase in math percentage score. The details of the results from the step-wise analysis are presented in @tbl-Initial-regression-for-student-data. The predictor Confident_in_Math had the largest effect on the math percent score followed by Number_of_Home_Study_Supports_Either @tbl-Initial-regression-for-student-data-4. The predictors used in this analysis do not exhibit multicollinearity as shown in @tbl-Initial-regression-for-student-data-3. A look at the residual plots in @fig-residual-std_reg_initial show a slight non-linearity with possible non-normality from the Q-Q plot.
+A step-wise regression model was estimated to evaluate whether the independent variables *(Country, Sex, Age, Disorderly_Behavior, Instructional_Clarity, Digital_Self_Efficacy, Student_Bullying, Like_Learning_Math, Confident_in_Math, and Number_of_Home_Study_Supports)* could predict the dependent variable, *Math_Percent_Correct* . The linear relationship between independent variables and math score was found to be statistically significant $F(11, 18357) = 439.39,\ p < .001$. Appoximately $21\%$ of the total variation in math percent score was account for by its linear relationship with the predictors, $R^2 = .21,\ R^2_{adj}=.21$. Among the predictors, instructional clarity had a statistically non-significant and negative effect on math percentage value $(\beta = -.16,\ p < .001)$, suggesting that greater instructional clarity was not associated with higher math percent values in this model over and above all other predictors. The effect of Country (U.S.A.) was statistically significant and positive $(\beta = 5.58,\ p < .001)$, suggesting that holding all other predictors unchanged, 4th grade students scored 5.58% higher than those in Canada. The effect of Sex (boy) was also statistically significant and positive $(\beta = 2.01,\ p < .001)$, suggesting that controlling for all other predictors, boys in the 4th grade scored 2.01% higher than girls. Interestingly, Like_Learning_Math was found to have statistically significant and negative effect on math percent score $(\beta = -.97,\ p < .001)$. This suggests that partialling out the effects of all other predictors, and a unit increase in a student whether a student likes learning math results in a -0.97% decrease in math percent score. All other predictors in the model had a statistically significant and positive effect on math percent score. This suggests that holding all other predictions unchanged, an increase in their respective values is expected lead to an increase in math percentage score.
+
+The details of the results from the step-wise analysis are presented in @tbl-Initial-regression-for-student-data. The predictor Confident_in_Math had the largest effect on the math percent score followed by Number_of_Home_Study_Supports_Either @tbl-Initial-regression-for-student-data-4. The predictors used in this analysis do not exhibit multicollinearity as shown in @tbl-Initial-regression-for-student-data-3. A look at the residual plots in @fig-residual-std_reg_initial show a slight non-linearity with possible non-normality from the Q-Q plot.
 
 ```{r}
 #| label: tbl-Initial-regression-for-student-data
@@ -149,8 +151,8 @@ A step-wise regression model was estimated to evaluate whether the independent v
 #| tbl-subcap: 
 #|     - Student Level Regression Coefficients
 #|     - Student Level Model Summary Statistics
-#|     - Variance Inflation Factors
-#|     - Standardized Regression Coefficients
+#|     - Variance Inflation Factors for Student Level Analysis
+#|     - Standardized Regression Coefficients for Student Level Analysis
 
 Tbl2
 Tbl3
@@ -160,7 +162,7 @@ Tbl5
 
 ```{r}
 #| label: fig-residual-std_reg_initial
-#| tbl-cap: Residual Plots for the First Regression Model
+#| fig-cap: Residual Plots for the Student Level Regression Model
 
  par(mfrow=c(2, 2))
   plot(std_stepwise)
@@ -279,4 +281,29 @@ tch_fig6
 
 #### Regression Analysis
 
-A step-wise regression model was estimated to evaluate whether the independent variables *(Country, Sex, Age, Disorderly_Behavior, Instructional_Clarity, Digital_Self_Efficacy, Student_Bullying, Like_Learning_Math, Confident_in_Math, and Number_of_Home_Study_Supports)* could predict the dependent variable, *Math_Percent_Correct* . The linear relationship between independent variables and math score was found to be statistically significant $F(11, 18357) = 439.39,\ p < .001$. Appoximately $21\%$ of the total variation in math percent score was account for by its linear relationship with the predictors, $R^2 = .21,\ R^2_{adj}=.21$. Among the predictors, instructional clarity had a statistically non-significant and negative effect on math percentage value $(\beta = -.16,\ p < .001)$, suggesting that greater instructional clarity was not associated with higher math percent values in this model over and above all other predictors. The effect of Country (U.S.A.) was statistically significant and positive $(\beta = 5.58,\ p < .001)$, suggesting that holding all other predictors unchanged, 4th grade students scored 5.58% higher than those in Canada. The effect of Sex (boy) was also statistically significant and positive $(\beta = 2.01,\ p < .001)$, suggesting that controlling for all other predictors, boys in the 4th grade scored 2.01% higher than girls. Interestingly, Like_Learning_Math was found to have statistically significant and negative effect on math percent score $(\beta = -.97,\ p < .001)$. This suggests that partialling out the effects of all other predictors, and a unit increase in a student whether a student likes learning math results in a -0.97% decrease in math percent score. All other predictors in the model had a statistically significant and positive effect on math percent score. This suggests that holding all other predictirs unchanged, an increase in their respective values is expected lead to an increase in math percentage score. The details of the results from the step-wise analysis are presented in @tbl-Initial-regression-for-student-data. The predictor Confident_in_Math had the largest effect on the math percent score followed by Number_of_Home_Study_Supports_Either @tbl-Initial-regression-for-student-data-4. The predictors used in this analysis do not exhibit multicollinearity as shown in @tbl-Initial-regression-for-student-data-3. A look at the residual plots in @fig-residual-std_reg_initial show a slight non-linearity with possible non-normality from the Q-Q plot.
+A step-wise regression model was estimated to evaluate whether the independent variables *(Years_Teaching, Sex, Age, Formal_Educ, Class_Size, Homework_Freq, Academic_Success, Safe_Orderly_Schools, Job_Satis, Student_not_Ready, Math_Major and Instruction_Hours)* could predict the dependent variable, *Math_Percent_Correct* . The linear relationship between independent variables and math score was found to be statistically significant $F(25, 18168) = 35.51,\ p < .001$, but it explained a small proportion of variance in students' math percentage scores. $(R^2 = .05,\ R^2_{adj}=.05)$. Among the predictors, instructional clarity had a statistically non-significant and negative effect on math percentage value $(\beta = -.16,\ p < .001)$, suggesting that greater instructional clarity was not associated with higher math percent values in this model over and above all other predictors. Compared to teachers with post-secondary, non-tertiary education, the effect of holding a bachelor’s or equivalent degree was statistically significant and positive $(\beta = 15.93,\ p = .043)$, as were the effects of holding a master’s or equivalent $(\beta = 17.16,\ p = .030)$ and a doctoral or equivalent degree $(\beta = 17.54,\ p = .035)$. The effect of holding a short-cycle tertiary education degree was positive but not statistically significant $(\beta = 6.47,\ p = .603)$. Relative to teachers under 25, the effects of being aged 25–29 $(\beta = -4.21,\ p < .001)$, 30–39 $(\beta = -4.80,\ p < .001)$, 40–49 $(\beta = -4.44,\ p < .001)$, and 50–59 $(\beta = -4.59,\ p < .001)$ were statistically significant and negative. The effect of being aged 60 or more was negative but not statistically significant $(\beta = -1.79,\ p = .266)$. Regarding the the other predictors, Years of teaching experience, class size, homework frequency (excluding "less than once a week"), academic success, and student readiness had statistically significant effects. In contrast, the effects of sex, instruction hours, and most math major categories were not statistically significant. The details of the results from the step-wise analysis are presented in @tbl-tch-Initial-regression-for-teacher-data-1 and @tbl-tch-Initial-regression-for-teacher-data-2. The categories of formal education levels had the largest effect on students' math percentage scores @tbl-tch-Initial-regression-for-teacher-data-4. The predictors used in this analysis do not exhibit multicollinearity as shown in @tbl-tch-Initial-regression-for-teacher-data-3.
+
+(ome back to this)A look at the residual plots in @fig-tch-residual show a slight non-linearity with possible non-normality from the Q-Q plot.
+
+```{r}
+#| label: tbl-tch-Initial-regression-for-teacher-data
+#| tbl-cap: Teacher-Level Regression Analysis
+#| tbl-subcap: 
+#|     - Teacher Level Regression Coefficients
+#|     - Teacher Level Model Summary Statistics
+#|     - Variance Inflation Factors for Teacher Level Analysis
+#|     - Standardized Regression Coefficients for Teacher Level Analysis
+
+tch_tb2
+tch_tb3
+tch_tb4
+tch_tb5
+```
+
+```{r}
+#| label: fig-tch-residual
+#| fig-cap: Residual Plots for the Teacher-Level Regression Model
+
+ par(mfrow=c(2, 2))
+  plot(tch_stepwise)
+```

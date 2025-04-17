@@ -48,7 +48,7 @@
 # (2) %%%%%%%%%%%%%%%%%%%% Descriptive Statistics for Student_Home Data %%%%%%%%%%%%%%%%%----
 {
   ## Table of Sample Descriptive Statistics
-  Tbl1 <- table1(~ Math_Percent_Correct + Age + Sex + Disorderly_Behavior + Student_Bullying + 
+  Tbl1 <- table1(~ Math_Percent_Correct + Age + Sex + Country + Disorderly_Behavior + Student_Bullying + 
             Instructional_Clarity + Digital_Self_Efficacy + Sense_of_School_Belonging + 
             Like_Learning_Math + Confident_in_Math + Number_of_Home_Study_Supports | Country, 
             data = Final_Home_Student)
@@ -186,8 +186,7 @@
                "Short-cycle tertiary education",
                "Bachelor’s or equivalent",
                "Master’s or equivalent",
-               "Doctor or equivalent"),
-    ordered = TRUE
+               "Doctor or equivalent")
   )
 
   ## Converting Sex and Homework_Freq, Math_Major, Age Columns to factors
@@ -280,4 +279,43 @@
   ## Correlation Plot
   tch_fig6 <- ggcorrplot( tch_cor, type = "upper", outline.col = "black", 
                       ggtheme = ggplot2::theme_minimal, colors = c("#6D9EC1", "white", "#E46726"), lab = TRUE)
+}
+
+# (7) %%%%%%%%%%%%%%%%%%%% Step-wise Regression Analysis for Student_Teacher Data %%%%%%%%%%%%%%%%%----
+{
+  ## Initial Regression Model
+  tch_reg_initial <- lm(Math_Percent_Correct ~ . - Teacher_ID, data = Final_Teacher_Student)
+  
+  ## Step-wise regression model
+  tch_stepwise <- step(tch_reg_initial, direction = "both", trace = 0)
+  tidy_tch_stepwise <- tidy(tch_stepwise)
+  tch_stepwise_summary <- glance(tch_stepwise)
+  tch_tb2 <- tidy_tch_stepwise |> 
+    kable(digits = 3) |> 
+    kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+  tch_tb3<- tch_stepwise_summary |> 
+    kable(digits = 3) |>
+    kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+  #summary(std_stepwise)
+  tch_tb4 <- VIF(tch_stepwise) |> 
+    kable(digits = 3) |> kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+  
+  ## Standardized coefficients
+  coeff_tch <- round(coef(standardize(tch_stepwise, standardize.y = TRUE, binary.inputs = "center")), 3)
+  coeff_tch <- data.frame(Estimate = round(coeff_tch, 3))
+  rownames(coeff_tch) <- c("Intercept", "Years_Teaching", "Sex_Male", "Sex_Other", "Age(25–29)", 
+                           "Age (30–39)", "Age (40–49)", "Age (50–59)", "Age (60 or more)", 
+                           "Formal_Educ (Short-cycle tertiary education)", "Formal_Educ (Bachelor’s or equivalent)", 
+                           "Formal_Educ (Master’s or equivalent)", "Formal_Educ (Doctor or equivalent)", "Class_Size", 
+                           "Homework_Freq (Less than once a week)", "Homework_Freq (1 or 2 times a week)", 
+                           "Homework_Freq (3 or 4 times a week)", "Homework_Freq (Every day)", "Academic_Success", 
+                           "Safe_Orderly_Schools", "Job_Satis", "Student_not_Ready", "Math_Major (Major in Edu but not Math)", 
+                           "Math_Major (Major in Math but not Edu)", "Math_Major(All other Majors)", "Instruction_Hours")
+
+  tch_tb5 <- kable(coeff_tch)|> 
+    kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+  
+  ## Residual plots in a 2*2 grid
+  #par(mfrow=c(2, 2))
+  #plot(tch_stepwise) -  This is plotted in Quarto file 
 }
