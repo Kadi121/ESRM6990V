@@ -319,3 +319,41 @@
   #par(mfrow=c(2, 2))
   #plot(tch_stepwise) -  This is plotted in Quarto file 
 }
+
+# (8) %%%%%%%%%%%%%%%%%%%% Marginal Mean/ Contrast Analysis for Student_Teacher Data %%%%%%%%%%%%%%%%%----
+{
+  ## Age-Level Analysis
+  age_pred <- estimate_means(tch_stepwise, "Age")
+  tch_fig7 <- ggplot(age_pred, aes(x = Age, y = Mean, group = 1)) +
+    geom_line(color = "black") +
+    geom_point(size = 2, color = "black") +
+    geom_errorbar(aes(ymin = CI_low, ymax = CI_high), width = 0.2) +
+    labs(
+      x = "Age of Teacher",
+      y = "Mean of Math Percent Scored") +
+    theme_bw()
+  
+  ## Marginal Contrasts for Age-Level Analysis
+  age_cont <- estimate_contrasts(tch_stepwise, "Age", p_adjust = "bonferroni")
+  tch_tb6<- age_cont |> 
+    kable(digits = 3) |>
+    kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+  
+  ## Education-Level Analysis
+  educ_pred <- estimate_means(tch_stepwise, "Formal_Educ")
+  tch_fig8 <- ggplot(educ_pred, aes(x = Formal_Educ, y = Mean, group = 1)) +
+    geom_line(color = "black") +
+    geom_point(size = 2, color = "black") +
+    geom_errorbar(aes(ymin = CI_low, ymax = CI_high), width = 0.2) +
+    labs(
+      x = "Teacher's Level of Formal Education",
+      y = "Mean of Math Percent Scored") +
+    theme_bw() +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  
+  ## Marginal Contrasts for Education-Level Analysis
+  educ_cont <- estimate_contrasts(tch_stepwise, "Formal_Educ", p_adjust = "bonferroni")
+  tch_tb7<- educ_cont |> 
+    kable(digits = 3) |>
+    kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+}
