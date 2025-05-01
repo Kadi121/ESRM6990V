@@ -1,5 +1,5 @@
 ---
-title: "Understanding 4th Grade Math Percent Correct through Student and Teacher Characteristics: A Regression Study using TIMSS 2023"
+title: "A Regression-Based Investigation of Student- and Teacher-Level Influences on Math Performance in TIMSS 2023"
 author: "Henrietta Kadi Tettey-Tawiah"
 format: html
 editor: visual
@@ -11,8 +11,6 @@ execute:
   #output: false
 bibliography: references.bib
 ---
-
-(A Regression-Based Investigation of Student- and Teacher-Level Influences on Math Performance in TIMSS 2023)
 
 ## Introduction: Research Scenario and Research Questions
 
@@ -302,7 +300,7 @@ tch_tb5
   plot(tch_stepwise)
 ```
 
-##### Marginal Contrast Analysis 
+##### Marginal Contrast Analysis
 
 Following the significant effect of the variables age and level of formal education in the regression model, the marginal means for these variables were computed separately, holding all other variables at their mean values. This was done to examine whether the model estimated different math test scores for an average student who had a teacher in any of the categories of age or formal education, respectively. A visualization of these estimated means is provided in @fig-tch-marginal-contrast-analysis, which shows distinct predictions at each subgroup.
 
@@ -342,6 +340,4 @@ The analyses of the TIMSS 2023 data for 4th grade students in the U.S.A. and Can
 
 The student-level explained approximately 21% of the variance in test scores, with gender, country, and students' attitudes toward learning math showing notable effects. Interestingly, a student’s liking for math was unexpectedly negatively associated with their test scores. The difference-in-differences analysis also revealed statististicaally significant differences across combinations of gender and country. Country level differences seem to have alarger effect as an average 4th grade girl in the U.S.A is estimated to score higher than their male and female Canadian counterparts. Despite this, it is important to recognize that country-level differences may reflect broader cultural and systemic factors. Given the distinct educational cultures, curricula, and teaching practices of the U.S. and Canada, attributing differences in scores solely to country-level factors would require further investigation.
 
-The teacher-level analysis accounted for approximately 5% of the variance in student scores. Notably, having an older teacher was negatively correlated with student performance, and having a teacher with a higher level of formal education had a positive effect. The small effect size of the model (5%) suggest that these factors alone explain a modest proportion of variation in a student's performace on the TIMSS 2023 math test. This highlights that other factors like school resources, classroom dynamics, teaching practices among others may contribute more substantially to a student's performance. The marginal contrast analysis showed that only the comparison between students of teachers with master’s vs. bachelor’s degrees yielded statistically significant differences. Additionally, students with teachers under 25 years old scored higher than those with teachers from other age groups.
-
-These findings indicate that, while teacher education remains a key factor in student performance, the small expalinaded variations by the models imply that additional factors should be considered in future research. Policymakers and educators may want to focus on improving teacher qualifications, but also recognize that improving teaching quality in broader terms—including pedagogical practices and teacher-student interactions—will likely have a more profound impact on student performance.
+The teacher-level analysis accounted for approximately 5% of the variance in student scores. Notably, having an older teacher was negatively correlated with student performance, and having a teacher with a higher level of formal education had a positive effect. The small effect size of the model (5%) suggest that these factors alone explain a modest proportion of variation in a student's performace on the TIMSS 2023 math test. This highlights that other factors like school resources, classroom dynamics, teaching practices among others may contribute more substantially to a student's performance. The marginal contrast analysis showed that only the comparison between students of teachers with master’s vs. bachelor’s degrees yielded statistically significant differences. Additionally, students with teachers under 25 years old scored higher than those with teachers from other age groups. These findings indicate that, while teacher education remains a key factor in student performance, the small explained variations by the model imply that additional factors should be considered in future research. Policymakers and educators may want to focus on improving teacher qualifications, but also recognize that improving teaching quality in broader terms—including pedagogical practices and teacher-student interactions—will likely have a more profound impact on student performance.
